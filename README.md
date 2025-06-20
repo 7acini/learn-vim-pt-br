@@ -1,19 +1,21 @@
 # Learn Vim
 
-Learn Vim right within VSCode. Use this extension to learn and practice your Vim skills and become a more awesome developer.
+**Este projeto é um fork da extensão original "Learn Vim" do VS Code, que foi originalmente desenvolvida em inglês.**
+
+Aprenda Vim diretamente dentro do VS Code. Use esta extensão para aprender e praticar suas habilidades no Vim e se tornar um desenvolvedor ainda mais incrível.
 
 ## Features
 
 ![Learn Vim](https://www.barbarianmeetscoding.com/images/learn-vim.jpg)
 
-- Progress Forward in your Path to Vim Mastery
-- Read along _Boost Your Coding Fu With VSCode and Vim_ and discover the awesomeness of Vim
-- Practice what you learn and become more productive
+- Avance no seu caminho para dominar o Vim
+- Leia junto com _Boost Your Coding Fu With VSCode and Vim_ e descubra a incrível eficiência do Vim
+- Pratique o que aprender e torne-se mais produtivo
 
-This plugin adds a command that sets VSCode up as an environment for learning Vim:
+Este plugin adiciona um comando que configura o VS Code como um ambiente para aprender Vim:
 
-- Open the Command Palette
-- Select _Learn Vim_
+- Abra a Paleta de Comandos
+- Selecione _Learn Vim_
 
 ![Learn Vim Basics](https://www.barbarianmeetscoding.com/images/learn-vim-extension-basics.jpg)
 
@@ -21,50 +23,50 @@ This plugin adds a command that sets VSCode up as an environment for learning Vi
 
 ## Requirements
 
-This plugin is best used in conjuction with [VSCodeVim](https://marketplace.visualstudio.com/items?itemName=vscodevim.vim).
+Este plugin é melhor utilizado em conjunto com [VSCodeVim](https://marketplace.visualstudio.com/items?itemName=vscodevim.vim).
 
 ## Known Issues
 
-This extension is still a work in progress. I just got so excited about putting this in your hands that I couldn't stop myself. Hope you'll find it valuable despite the kinks.
+Esta extensão ainda está em desenvolvimento. Fiquei tão animado em disponibilizá-la que não consegui esperar. Espero que você a ache útil, mesmo com alguns ajustes necessários.
 
 ## For more information
 
 - [Barbarian meets coding](https://www.barbarianmeetscoding.com)
 - [Boost Your Coding Fu With VSCode and Vim](https://www.barbarianmeetscoding.com/boost-your-coding-fu-with-vscode-and-vim)
-- [Ping me on Twitter if you have any issues or questions](https://www.twitter.com/vintharas)
+- [Me envie uma mensagem no Twitter se tiver problemas ou dúvidas](https://www.twitter.com/vintharas)
 
-**Enjoy!**
+**Aproveite!**
 
 ## Acknowledgements
 
-Credit where it's due for the icons used in this extension:
+Créditos onde são devidos pelos ícones usados nesta extensão:
 
 - [Alfredo Fernandez](https://www.flaticon.com/authors/alfredo-hernandez)
 - [Pixel perfect](https://icon54.com/)
 
-Massive kudos to the team of [VSCodeVim](https://github.com/VSCodeVim/Vim) for bringing a great Vim experience into VSCode.
+Um enorme agradecimento à equipe do [VSCodeVim](https://github.com/VSCodeVim/Vim) por trazer uma ótima experiência do Vim para o VS Code.
 
 ## Release Notes
 
 ### 0.0.28 - Pasting in insert mode
 
-- More about pasting in the insert modality of modes. Oh wow it's been a long time since the last update. What's wrong with you Jaime? Sorry I was busy procreating and taking care of the side effects of the procreation.
+- Mais sobre colar no modo de inserção. Uau, já faz muito tempo desde a última atualização. O que há de errado com você, Jaime? Desculpe, estava ocupado procriando e cuidando dos efeitos colaterais da procriação.
 
 ### 0.0.27 - Registers
 
-- Registering registers in the registry...
+- Registrando registros no registro...
 
 ### 0.0.26 - Even More World domination with more copy/paste
 
-- There's lots to learn in this one.
+- Há muito o que aprender nesta versão.
 
 ### 0.0.25 - More World domination with more copy/paste
 
-- The race for world domination continues.
+- A corrida pela dominação mundial continua.
 
 ### 0.0.24 - World domination with copy/paste
 
-- A guide to world domination by y and p.
+- Um guia para dominar o mundo com `y` e `p`.
 
 ### 0.0.23 - gn...
 
@@ -72,94 +74,94 @@ Massive kudos to the team of [VSCodeVim](https://github.com/VSCodeVim/Vim) for b
 
 ### 0.0.22 - Completely Visualized
 
-- Visual mode completed! Wihoo!
+- Modo Visual concluído! Uhull!
 
 ### 0.0.21 - Visualize Victory
 
-- Started Visual mode!
+- Modo Visual iniciado!
 
 ### 0.0.20 - Insert has been inserted
 
-- Insert mode completed!
+- Modo de Inserção concluído!
 
 ### 0.0.19 - A Little Step for Insert
 
-- Another command. Another exercise.
+- Mais um comando. Mais um exercício.
 
 ### 0.0.18 - Fix Embarrassing Typo
 
-- Fixed embarrassing mistake in diagram that would undermine all my Vim knowledge, skills and self-worth as a human being.
+- Corrigi um erro vergonhoso no diagrama que poderia abalar todo o meu conhecimento em Vim, habilidades e autoestima como ser humano.
 
 ### 0.0.17 - Insert Moar
 
-- New Insert mode exercising!
+- Novos exercícios do modo de Inserção!
 
 ### 0.0.16 - Secrets
 
-- Vim Secret Language
+- A Linguagem Secreta do Vim
 
 ### 0.0.15 - Operators operated
 
-- Completed operator exercises. Phew.
+- Exercícios de operadores concluídos. Ufa.
 
 ### 0.0.14 - An extra serving of whimsical exercises
 
-- Added more operator exercises with florkins, towels and Conan.
-- Don't panic.
+- Adicionei mais exercícios de operadores com florkins, toalhas e Conan.
+- Não entre em pânico.
 
 ### 0.0.13 - The Text Objects Strike Back
 
-- Added exercises about text objects and more.
-- Added section undo/redo before starting editing so much.
+- Adicionei exercícios sobre objetos de texto e mais.
+- Incluí uma seção sobre desfazer/refazer antes de começar a editar demais.
 
 ### 0.0.12 - README Feng Shui
 
-- Reordering and rearranging the README to make more sense.
+- Reorganizei o README para ficar mais claro.
 
 ### 0.0.11 - README!!
 
-- Correct typos in README
+- Corrigi erros de digitação no README.
 
 ### 0.0.10 - README
 
-- Written more compelling README
+- Escrevi um README mais atraente.
 
 ### 0.0.9 - Editorial Corrections
 
-- Typos have been dealt with switfly.
+- Erros de digitação foram corrigidos rapidamente.
 
 ### 0.0.8 - Combinatorial Explosion
 
-- Change, Dot operator and the many combinations of operators and motions.
+- Modificação, operador "Dot" e as muitas combinações de operadores e movimentos.
 
 ### 0.0.7 - On florkins, blurkins and flerkens
 
-- More whimsical operator exercises.
+- Mais exercícios divertidos de operadores.
 
 ### 0.0.6 - Operation operators
 
-- Started adding operators
+- Comecei a adicionar operadores.
 
 ### 0.0.5 - I like to move it, move it
 
-- Complete motions exercises
+- Exercícios de movimentos concluídos.
 
 ### 0.0.4 - Typos and Things of Lesser note
 
-- Corrected README
-- Added keywords
+- Corrigi o README.
+- Adicionei palavras-chave.
 
 ### 0.0.3 - Motions
 
-- Added lots of motions
-- Added acknowledgements for the icons
+- Adicionei vários movimentos.
+- Incluí créditos pelos ícones.
 
 ### 0.0.2 - Softening the Start
 
-- Updated description to prompt user to use the _Learn Vim_ command.
-- Added link to videos
+- Atualizei a descrição para orientar o usuário a usar o comando _Learn Vim_.
+- Adicionei um link para vídeos.
 
 ### 0.0.1 - A New Hope
 
-- First release. Wihoo!
-- Instructions and exercises for first 4 chapters.
+- Primeira versão. Uhull!
+- Instruções e exercícios para os primeiros 4 capítulos.
