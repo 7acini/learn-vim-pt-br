@@ -1,10 +1,10 @@
-# Editing Like Magic With Vim Operators
+# Editando Como Mágica com Operadores do Vim
 
-To do things in Vim you use **commands**. Commands are actions that have an effect in your editor. There's lots of different commands that do different things. Earlier we saw how **motions** let you move around in **Normal mode**.
+No Vim você usa **comandos** para realizar ações no editor. Comandos são ações que têm efeito no seu editor. Existem muitos comandos diferentes para diversas finalidades. Anteriormente vimos como **movimentos** permitem navegar no **modo normal**.
 
-**Operators** are commands that let you perform actions to change the content of your editor.
+**Operadores** são comandos que permitem realizar ações para alterar o conteúdo do editor.
 
-> Remember that you can navigate this file using hjkl:
+> Lembre-se que você pode navegar neste arquivo usando hjkl:
 >
 > ```
 >            ↑
@@ -12,72 +12,73 @@ To do things in Vim you use **commands**. Commands are actions that have an effe
 >          ↓
 > ```
 >
-> or {} or CTRL-U, CTRL-D
+> ou {} ou CTRL-U, CTRL-D
 
-You use **operators** in combination with **counts** and **motions** to define the range of text to which an action applies:
+Você usa **operadores** em combinação com **contagens** e **movimentos** para definir o alcance do texto onde uma ação será aplicada:
 
 ```
-   what to do (delete, change...)
+   o que fazer (deletar, alterar...)
       /
-     /      how many times
+     /      quantas vezes
     /         /
    v         v
-{operator}{count}{motion}
+{operador}{contagem}{movimento}
                     ^
                    /
                   /
-           where to perform
-             the action
+           onde realizar
+             a ação
 ```
 
-For example, take `d2w`. It tells Vim to **d**elete **2** **w**ords. Try it!
+Por exemplo, veja `d2w`. Ele diz ao Vim para **d**eletar **2** **p**alavras. Experimente!
 
 ```
-  start here
+  comece aqui
   /
  /
 v
-DO NOT ENTER!
+PROIBIDA A ENTRADA!
 ```
 
-And now try removing `not` from the text below:
+Agora tente remover `não` do texto abaixo:
 
-> Remember that you can jump directly to the not word using the search motion /not (try it, and use any opportunity you find to practice motions)
+> Lembre-se que você pode pular diretamente para a palavra "não" usando o movimento de busca /não (experimente, e aproveite qualquer oportunidade para praticar movimentos)
 
 ```
-           remove this
+           remova isto
              /
             /
            v
-You shall not pass!!
+Você não pode passar!!
 ```
 
-Yep. You could achieve that using `dw`. Interesting... So all the motions you learned earlier, which were super useful on their own terms to move fast within a file, can also be used to edit text equally fast.
+Sim, você poderia fazer isso com `dw`. Interessante... Então todos os movimentos que você aprendeu antes, que eram super úteis por si só para navegar rapidamente em um arquivo, também podem ser usados para editar texto com a mesma velocidade.
 
-Wow! Awesome right?
+Uau! Incrível, não é?
 
-# Before we start: Undoing and redoing
+# Antes de começar: Desfazendo e refazendo
 
-We're going to be doing a lot of editing in this chapter so this is the perfect place to learn how to undo and redo things in Vim in case you make a mistake (Don't think too much of it, I still make mistakes after 8 years using Vim). So if you try some command and it doesn't work out as you expect. **DON'T PANIC!**. Press `u` to undo and you last change will be reverted. You can continue pressing `u` if several things went sideways. If you want to redo, type `<CTRL-R>`.
+Vamos fazer muitas edições neste capítulo, então este é o lugar perfeito para aprender como desfazer e refazer coisas no Vim caso você cometa um erro (Não pense muito nisso, eu ainda cometo erros depois de 8 anos usando Vim). Então se você tentar algum comando e não funcionar como esperado. **NÃO ENTRE EM PÂNICO!**. Pressione `u` para desfazer e sua última alteração será revertida. Você pode continuar pressionando `u` se várias coisas derem errado. Se quiser refazer, digite `<CTRL-R>`.
 
 ```
 
        |￣￣￣￣￣￣￣￣￣|
-       |  DON'T PANIC! |
-       |   u TO UNDO   |
-       |  C-R TO REDO  |
+       | NÃO ENTRE EM  |
+       |   PÂNICO!     |
+       | u PARA DESFAZER|
+       | C-R PARA REFAZER|
        |＿＿＿＿＿＿＿＿＿|
 
 ```
 
-## Practice Delete: Obliterate The Florkins!!
+## Praticando Delete: Obliterando os Florkins!!
 
-The following scenarios are filled with florkins. A highly invasive and very dangerous alien species that resemble earth kittens but are nothing like kittens. Well... They're cute, and fluffy, and cuddly, but behind that facade there's a deadly and bloodthirsty hunter who can devour a full-sized blurkin in under 3 seconds (and if you're wondering... florkins are nothing like flerkens).
+Os cenários a seguir estão cheios de florkins. Uma espécie alienígena altamente invasiva e muito perigosa que se parece com gatinhos terrestres, mas não são nada como gatinhos. Bem... Eles são fofos, peludos e aconchegantes, mas por trás dessa fachada há um caçador mortal e sanguinário que pode devorar um blurkin adulto em menos de 3 segundos (e caso esteja se perguntando... florkins não são nada como flerkens).
 
 ```
      |￣￣￣￣￣￣￣￣￣|
-     | I WILL DEVOUR |
-     |  YOUR SOUL!!  |
+     |  EU VOU DEVORAR|
+     |  SUA ALMA!!    |
      |＿＿＿＿＿＿＿＿＿|
      (\__/)  ||
      (•ㅅ•)  ||
@@ -86,11 +87,11 @@ The following scenarios are filled with florkins. A highly invasive and very dan
 |＿＿＿＿＿＿＿＿＿|
 ```
 
-> Try to combine the d operator with motions to obliterate these florkins. Test different motions and see which one works best. (if you struggle, take a look at the solutions at the bottom - search for /solutions, to come back here type <CTRL-O>)
+> Tente combinar o operador d com movimentos para obliterar esses florkins. Teste diferentes movimentos e veja qual funciona melhor. (se tiver dificuldade, dê uma olhada nas soluções no final - busque por /soluções, para voltar aqui digite <CTRL-O>)
 
 ```
-  #1. start here florkin avenger!
-  Can you obliterate these florkins with just one command?
+  #1. comece aqui florkin vingador!
+  Você consegue obliterar esses florkins com apenas um comando?
   /
  /
 v
@@ -101,10 +102,10 @@ florkin
 florkin
 ```
 
-> Disclaimer: no florkins, blurkins nor flerkens were harmed in the making of these practice exercises. The `d` command only sends this exotic fauna to their natural habitat in the netherworld.
+> Aviso: nenhum florkin, blurkin ou flerken foi machucado na criação destes exercícios. O comando `d` apenas envia essa fauna exótica para seu habitat natural no mundo inferior.
 
 ```
-  #2. start here!
+  #2. comece aqui!
   /
  /
 v
@@ -112,7 +113,7 @@ v
 ```
 
 ```
-  #3. start here!
+  #3. comece aqui!
   /
  /
 v
@@ -125,85 +126,85 @@ v
 ```
 
 ```
-  #4. start here!
+  #4. comece aqui!
   /
  /
 v
 florkin
 florkin
 florkin
-cucumber
+pepino
 ```
 
-Now type `ggdG` to delete the whole document. **No! Don't do it!** I haven't taught you to undo yet (shhhh it's `u`)
+Agora digite `ggdG` para deletar todo o documento. **Não! Não faça isso!** Eu ainda não te ensinei a desfazer (shhhh é `u`)
 
-So we've been playing a long with florkins, flerkens and blurkins but what about trying `d` with **some actual code**?!? Let's do that next.
+Então estivemos brincando com florkins, flerkens e blurkins, mas que tal tentar `d` com **código real**?!? Vamos fazer isso a seguir.
 
-The following extract of a semi non-sensical article about Vim has a typo with a repeated `like` inside the button. Go ahead and remove it using a combination of motions and the `d` operator.
+O trecho a seguir de um artigo semi sem sentido sobre Vim tem um erro de digitação com um `like` repetido dentro do botão. Vá em frente e remova-o usando uma combinação de movimentos e o operador `d`.
 
 ```
 <article>
-    <h1>This is a super great article about Vim</h1>
+    <h1>Este é um artigo super legal sobre Vim</h1>
     <p>
-        Vim is the shait. It's really good. Mastery. Excellence. Vim. Vim.
-        Good. Wow. Can't exit Vim.
+        Vim é incrível. É muito bom. Maestria. Excelência. Vim. Vim.
+        Bom. Uau. Não consigo sair do Vim.
     </p>
     <p>
-        Really good. Much wow. Excellent. Productivity. Wow. Craftsmanship.
+        Muito bom. Que uau. Excelente. Produtividade. Uau. Artesanato.
     </p>
     <button>
-    I like like Vim
+    Eu gosto gosto do Vim
     </button>
 </article>
 ```
 
-Excellent! One of the simplest way to remove the typo above is `/li<ENTER>dw`. Is that what you did? Regardless, **take a moment to reflect** about how you would have achieved this without Vim. Would you have used the mouse, slowly selected the text and deleted it? Would you have navigated with the arrows? How does it feel to only need to type a few keystrokes to obliterate that typo into oblivion? Awesome right? When you become competent using Vim you'll feel like that, **all. the. time**
+Excelente! Uma das formas mais simples de remover o erro acima é `/li<ENTER>dw`. Foi isso que você fez? Independentemente disso, **pare um momento para refletir** sobre como você teria feito isso sem o Vim. Você teria usado o mouse, selecionado lentamente o texto e deletado? Você teria navegado com as setas? Como é a sensação de precisar apenas de alguns toques para obliterar aquele erro? Incrível, não é? Quando você se tornar competente usando Vim, você vai se sentir assim, **o. tempo. todo.**
 
-> Do you have a problem remembering all the motions? A great way to remember the different commands is to take advantage of mnemonics, as oftentimes the commands will be the first letter of a word which describes what they do:
+> Tem dificuldade em lembrar todos os movimentos? Uma ótima maneira de lembrar os diferentes comandos é aproveitar mnemônicos, pois frequentemente os comandos serão a primeira letra de uma palavra que descreve o que eles fazem:
 >
-> - d for delete
-> - f for find
-> - c for change
-> - t for unTil
+> - d para delete (deletar)
+> - f para find (encontrar)
+> - c para change (alterar)
+> - t para until (até)
 >
-> and so on. If you still feel like you need a refresher, then take a look at the Cheatsheet in the Learn Vim side panel.
+> e assim por diante. Se ainda sentir que precisa de uma revisão, dê uma olhada no Cheatsheet no painel lateral Aprenda Vim.
 
-## Practice dd and D (Operator shorthand syntax)
+## Praticando dd e D (Sintaxe abreviada de operadores)
 
-When you double an operator like this `dd` you make it operate on a complete line. So `dd` lets you delete a complete line of text.
+Quando você repete um operador como em `dd`, você faz com que ele opere em uma linha completa. Então `dd` permite deletar uma linha inteira de texto.
 
-Nifty, right? Now deleting these lines of florkins becomes trivial. Just type `dd` and they're gone. Try it:
+Bacana, não é? Agora deletar essas linhas de florkins se torna trivial. Basta digitar `dd` e eles desaparecem. Experimente:
 
 ```
-  #5. start here!
+  #5. comece aqui!
   /
  /
 v
 florkin florkin florkin florkin
-kitten
+gatinho
 florkin florkin
-kitten
+gatinho
 florkin
 ```
 
-`D` is also really useful, it removes everything from the cursor until the end of the line (it is equivalent to `d$` but easier to type). Try combining `dd` and `D` to send more florkins home:
+`D` também é muito útil, ele remove tudo do cursor até o final da linha (é equivalente a `d$` mas mais fácil de digitar). Tente combinar `dd` e `D` para mandar mais florkins para casa:
 
 ```
-  #6. start here!
+  #6. comece aqui!
   /
  /
 v
 florkin florkin florkin florkin
-kitten florkin florkin
+gatinho florkin florkin
 florkin florkin
-kitten kitten florkin
-kitten puppy florkin
+gatinho gatinho florkin
+gatinho cachorrinho florkin
 ```
 
-And now let's have a real world programming example. What is more common that code duplication? Our codebase has become bloated over the years and someone created a `sayHello` function that is exactly the same function than the existing `salute`. Remove one of them, for the glory of DRY!!
+E agora vamos a um exemplo real de programação. O que é mais comum que duplicação de código? Nossa base de código ficou inchada ao longo dos anos e alguém criou uma função `sayHello` que é exatamente igual à função existente `salute`. Remova uma delas, pela glória do DRY!!
 
 ```javascript
-  start here!
+  comece aqui!
   /
  /
 v
@@ -211,149 +212,150 @@ const salute = (person) => console.log(`Hello ${person}!`);
 const sayHello = (person) => console.log(`Hello ${person}!`);
 ```
 
-Now remove the verbose message in the call to action button below so it only reads _Subscribe now_:
+Agora remova a mensagem verbosa no botão de chamada para ação abaixo para que ele diga apenas _Inscreva-se agora_:
 
 ```html
 <button>
-  Subscribe now to this amazing newsletter and get more awesome content!
+  Inscreva-se agora nesta newsletter incrível e receba mais conteúdo fantástico!
 </button>
 ```
 
-Again! Marvel at how fast you can remove text using Vim operators and motions! ＼O／
+De novo! Maravilhe-se com a velocidade que você pode remover texto usando operadores e movimentos do Vim! ＼O／
 
-> Mini-refresher: The d command
+> Mini-revisão: O comando d
 >
-> - d{motion} - delete text covered by motion
+> - d{movimento} - deleta texto coberto pelo movimento
 >
->   - d2w => deletes two words
->   - dt; => delete until ;
->   - d/hello => delete until hello
+>   - d2w => deleta duas palavras
+>   - dt; => deleta até ;
+>   - d/olá => deleta até olá
 >
-> - dd - delete line
-> - D - delete from cursor until the end of the line
+> - dd - deleta linha
+> - D - deleta do cursor até o final da linha
 
-## Practice Change: Growing as a Person in the Age of Vim
+## Praticando Change: Crescendo como Pessoa na Era do Vim
 
-The `c` **change command** deletes a piece of text and then sends you into **Insert mode** so that you can continue typing, changing the original text into something else. The change operator is like the `d` and `i` commands combined into one. **This duality makes it the most useful operator**.
+O comando `c` (**change**) deleta um pedaço de texto e então te leva para o **modo inserção** para que você possa continuar digitando, transformando o texto original em outra coisa. O operador change é como os comandos `d` e `i` combinados em um. **Esta dualidade o torna o operador mais útil**.
 
-Let's illustrate the power of the `c` command with an example. We have the following variable that represent a corteous salute but we are out of courtesy and we just want to make it a polite salute instead (in essense, change any reference from `courteous` to `polite`).
+Vamos ilustrar o poder do comando `c` com um exemplo. Temos a seguinte variável que representa uma saudação cortês, mas estamos sem cortesia e queremos transformá-la em uma saudação apenas educada (em essência, mudar qualquer referência de `cortês` para `educado`).
 
-Try to achieve that with the `d` and `i` commands:
+Tente fazer isso com os comandos `d` e `i`:
 
 ```typescript
-  start here and use d + i
+  comece aqui e use d + i
   /
  /
 v
-const courteousSalute = "I courteously salute you good person.";
+const saudacaoCortes = "Eu cordialmente saúdo você, boa pessoa.";
 ```
 
-And now try to achieve the same by just using the `c` command. Don't worry if you fail, I'll show you how to do it in the next paragraph:
+E agora tente alcançar o mesmo usando apenas o comando `c`. Não se preocupe se falhar, vou mostrar como fazer no próximo parágrafo:
 
 ```typescript
-  start here and use the c command
+  comece aqui e use o comando c
   /
  /
 v
-const courteousSalute = "I courteously salute you good person.";
+const saudacaoCortes = "Eu cordialmente saúdo você, boa pessoa.";
 ```
 
-Great job regardless of the results! Getting good at Vim, like with anything is all about practice. So keep at it! :) This below is one way to solve our problem using both `d` and `i`, or `c`:
+Ótimo trabalho independente dos resultados! Tornar-se bom no Vim, como com qualquer coisa, é questão de prática. Então continue assim! :) Abaixo está uma forma de resolver nosso problema usando tanto `d` e `i`, quanto `c`:
 
 ```typescript
-// d + i=> wdtSipolite<ESC>fcdwipolitely<ESPACE><ESC>
-// c => wctSpolite<ESC>fccwpolitely<ESPACE><ESC>
-const courteousSalute = "I courteously salute you good person.";
+// d + i=> wdtSieducado<ESC>fcdwieducadamente<ESPACE><ESC>
+// c => wctSeducado<ESC>fccweducadamente<ESPACE><ESC>
+const saudacaoCortes = "Eu cordialmente saúdo você, boa pessoa.";
 ```
 
-As you've been able to experience, using `c` saves you one keystroke which is great in itself but there's an even more compelling reason for using `c` over `d` when you want to change stuff...
+Como você pôde experimentar, usar `c` economiza um toque, o que já é ótimo por si só, mas há uma razão ainda mais convincente para usar `c` em vez de `d` quando você quer mudar coisas...
 
-## The Dot Operator
+## O Operador Ponto
 
-One of the most amazing operators in Vim is the dot operator or `.`. The dot operator allows you to **repeat your last change**. With one single keystroke `.` you can repeat a complete change that can be composed of as many keystrokes as you can imagine.
+Um dos operadores mais incríveis do Vim é o operador ponto ou `.`. O operador ponto permite que você **repita sua última alteração**. Com um único toque `.` você pode repetir uma alteração completa que pode ser composta por quantos toques você puder imaginar.
 
-But **what is exactly a change?** Anything that changes the contents of your editor:
+Mas **o que exatamente é uma alteração?** Qualquer coisa que mude o conteúdo do seu editor:
 
-- using `d{motion}` constitutes a change,
-- using `i{typeSomething}<ESC>` is another change,
-- using `c{typeSomething}<ESC>` is yet another change
+- usar `d{movimento}` constitui uma alteração,
+- usar `i{digitarAlgo}<ESC>` é outra alteração,
+- usar `c{digitarAlgo}<ESC>` é mais uma alteração
 
-So by the very nature of `d` and `c`, the `c` command is more repeatable. Let's illustrate this with the same example:
+Então, pela própria natureza de `d` e `c`, o comando `c` é mais repetível. Vamos ilustrar isso com o mesmo exemplo:
 
 ```typescript
-  start here
+  comece aqui
   /
  /
 v
-const courteousSalute = "I courteously salute you good person.";
+const saudacaoCortes = "Eu cordialmente saúdo você, boa pessoa.";
 ```
 
-In essence, we want to change `courteous` for `polite` which feels like a completely self-contained and repeatable change. In theory, we should be able to make one single change (`courteous` for `polite`) and then repeat it with the `.` operator at the right place.
+Em essência, queremos mudar `cordialmente` para `educadamente`, o que parece uma mudança completamente auto-contida e repetível. Em teoria, deveríamos ser capazes de fazer uma única mudança (`cordialmente` para `educadamente`) e então repeti-la com o operador `.` no lugar certo.
 
-Try and see whether you can achieve it with both `d` and `i`, and `c`:
+Tente e veja se consegue fazer isso com ambos `d` e `i`, e `c`:
 
 ```typescript
-  start here
+  comece aqui
   /
  /
 v
-const courteousSalute = "I courteously salute you good person.";
+const saudacaoCortes = "Eu cordialmente saúdo você, boa pessoa.";
 ```
 
-Excellent work! You may have noticed that using `d` and `i` the change is **not repeatable** because the last change is either delete or insert and never the one you need. This illustrates how `c` is more repeatable than `d`.
+Excelente trabalho! Você deve ter notado que usando `d` e `i` a mudança **não é repetível** porque a última alteração é ou deletar ou inserir e nunca a que você precisa. Isso ilustra como `c` é mais repetível que `d`.
 
-Now see how the different approaches compare to the previous versions without the `.` operator:
+Agora veja como as diferentes abordagens se comparam às versões anteriores sem o operador `.`:
 
 ```typescript
-// d + i   => wdtSipolite<ESC>fcdwipolitely<ESPACE><ESC>
-// c       => wctSpolite<ESC>fccwpolitely<ESPACE><ESC>
-// c and . => wcfspolite<ESC>fc.
-const courteousSalute = "I courteously salute you good person.";
+// d + i   => wdtSieducado<ESC>fcdwieducadamente<ESPACE><ESC>
+// c       => wctSeducado<ESC>fccweducadamente<ESPACE><ESC>
+// c e . => wcfSeducado<ESC>fc.
+const saudacaoCortes = "Eu cordialmente saúdo você, boa pessoa.";
 ```
 
-**A secret to becoming more effective at text editing with Vim is learning how to make your changes more repeatable.** A skill that you'll develop as you practice more and more at using Vim.
+**Um segredo para se tornar mais eficaz na edição de texto com Vim é aprender como tornar suas alterações mais repetíveis.** Uma habilidade que você desenvolverá conforme pratica mais e mais o uso do Vim.
 
-An even more effective way to solve the problem we've been tackling is to combine two repeaters: search motions, change and the dot operator.
+Uma forma ainda mais eficaz de resolver o problema que estamos enfrentando é combinar dois repetidores: movimentos de busca, change e o operador ponto.
 
 ```typescript
-// Building the command step by step:
+// Construindo o comando passo a passo:
 // /co<ENTER>
-// /co<ENTER>cfspolite<ESC>
-// /co<ENTER>cfspolite<ESC>n.
-const courteousSalute = "I courteously salute you good person.";
+// /co<ENTER>cfSeducado<ESC>
+// /co<ENTER>cfSeducado<ESC>n.
+const saudacaoCortes = "Eu cordialmente saúdo você, boa pessoa.";
 ```
 
-So:
+Então:
 
-1. first we search `/co<ENTER>`
-2. then we describe the change `cfspolite<ESC>`
-3. then we repeat the motion `n` and the change `.`
+1. primeiro buscamos `/co<ENTER>`
+2. então descrevemos a mudança `cfSeducado<ESC>`
+3. então repetimos o movimento `n` e a mudança `.`
 
-This is about the same number of keystrokes than the previous solution but far more repeatable as you could travel the entire breath of a file with `n` and `N`.
+Isso tem aproximadamente o mesmo número de toques que a solução anterior, mas é muito mais repetível, pois você poderia percorrer todo um arquivo com `n` e `N`.
 
-Now try to do the same and make this an `angry` salute:
+Agora tente fazer o mesmo e transformar isso em uma saudação `brava`:
 
 ```typescript
-   start here
+   comece aqui
   /
  /
 v
-const politeSalute = "I polite salute you good person.";
+const saudacaoEducada = "Eu educadamente saúdo você, boa pessoa.";
 ```
 
-> Amazing right? Hopefully you've started to awaken to one of the most amazing things about Vim which is its capability for composing different commands together and the infinite possibilities this unlocks.
+> Incrível, não é? Espero que você tenha começado a despertar para uma das coisas mais impressionantes do Vim, que é sua capacidade de compor diferentes comandos juntos e as infinitas possibilidades que isso desbloqueia.
 >
-> I completely understand if you feel overwhelmed by all the different motions and operators combinations available, but believe me, over time and with practice it will fade into the background and become second nature as you code.
+> Eu entendo completamente se você se sente sobrecarregado por todas as diferentes combinações de movimentos e operadores disponíveis, mas acredite em mim, com o tempo e prática isso vai desaparecer no fundo e se tornar segunda natureza enquanto você programa.
 
-## You're Already a Change Master
+## Você Já é um Mestre em Change
 
-One great thing about Vim is that whenever you learn a new command, like `c` you pretty much already grok it. Why? Because you can combine it with all the motions that you already know. Prove me right and see if you can solve these exercises where we shall continue on our quest to rid our dimension of the florkin menace:
+Uma coisa ótima sobre o Vim é que sempre que você aprende um novo comando, como `c`, você praticamente já o entende. Por quê? Porque você pode combiná-lo com todos os movimentos que já conhece. Prove que estou certo e veja se consegue resolver estes exercícios onde continuaremos nossa missão de livrar nossa dimensão da ameaça florkin:
 
 ```
      |￣￣￣￣￣￣￣￣￣|
-     |  YOU CANNOT   |
-     |  BEAT ME!!    |
-     | I'M 2 STRONG  |
+     |  VOCÊ NÃO    |
+     |  PODE ME      |
+     |  VENCER!!     |
+     | SOU FORTE DEMAIS|
      |＿＿＿＿＿＿＿＿＿|
      (\__/)  ||
      (•ㅅ•)  ||
@@ -362,13 +364,13 @@ One great thing about Vim is that whenever you learn a new command, like `c` you
 |＿＿＿＿＿＿＿＿＿|
 ```
 
-Use what you've learned to switch evil `florkin` for cute `kitten`. Good Luck!
+Use o que aprendeu para trocar o malvado `florkin` pelo fofo `gatinho`. Boa sorte!
 
-> Remember that if you're curious you can jump to the end to find some solutions. Just search for /solutions change. You can come back here by typing <CTRL-O>.
+> Lembre-se que se estiver curioso pode pular para o final para encontrar algumas soluções. Basta buscar por /soluções change. Você pode voltar aqui digitando <CTRL-O>.
 
 ```
-  #7. start here florkin avenger!
-  Change these florkin into kittens!
+  #7. comece aqui florkin vingador!
+  Mude esses florkins para gatinhos!
   /
  /
 v
@@ -379,10 +381,10 @@ florkin
 florkin
 ```
 
-> There's a much faster way to solve this with the :s command. But that's stuff that we'll save for later. Let's keep practicing the c command.
+> Há uma forma muito mais rápida de resolver isso com o comando :s. Mas isso é algo que guardaremos para depois. Vamos continuar praticando o comando c.
 
 ```
-  #8. start here!
+  #8. comece aqui!
   /
  /
 v
@@ -390,7 +392,7 @@ v
 ```
 
 ```
-  #9. start here!
+  #9. comece aqui!
   /
  /
 v
@@ -403,88 +405,88 @@ v
 ```
 
 ```
-  #10. start here!
+  #10. comece aqui!
   /
  /
 v
 florkin
 florkin
 florkin
-cucumber
+pepino
 ```
 
-Excellent! Great job! I hope that you recalled that shorthand syntax commands like `dd` and `D` also apply for the `c` command. If you didn't, let this be a refresher:
+Excelente! Ótimo trabalho! Espero que você tenha lembrado que os comandos abreviados como `dd` e `D` também se aplicam ao comando `c`. Se não lembrou, deixe isso ser uma revisão:
 
-- `cc` changes a complete line
-- `C` changes from the cursor until the end on the line
+- `cc` muda uma linha completa
+- `C` muda do cursor até o final da linha
 
-If you didn't use them in the exercises above, go back and see if any of them simplify some of the exercises.
+Se você não os usou nos exercícios acima, volte e veja se algum deles simplifica alguns dos exercícios.
 
-**Now let's move onto yet another super powerful feature in Vim: Text objects.**
+**Agora vamos para outra funcionalidade super poderosa do Vim: Objetos de Texto.**
 
-## Text Objects
+## Objetos de Texto
 
-Text objects are structured pieces of text that describe the parts in a document: words, sentences, quoted text, paragraphs, blocks, (HTML) tags, etc. You can use them in combination with operators to change a word, sentence, paragraph, etc.
+Objetos de texto são pedaços estruturados de texto que descrevem partes em um documento: palavras, frases, parágrafos, blocos, (HTML) tags, etc. Você pode usá-los em combinação com operadores para alterar uma palavra, frase, parágrafo, etc.
 
-You build a text object by using these particles:
+Você constrói um objeto de texto usando estas partículas:
 
 ```
-            |- `a` means around
-            |- `i` means inner
+            |- `a` significa around (ao redor)
+            |- `i` significa inner (interno)
            /
           /
          /
-        {a|i}{text-object}
+        {a|i}{objeto-de-texto}
                   /
                  /
-                | w - word
-                | s - sentence
-                | p - paragraph
-                | " - quotes
+                | w - word (palavra)
+                | s - sentence (frase)
+                | p - paragraph (parágrafo)
+                | " - quotes (aspas)
 ```
 
-And then you combine them with an operator like so:
+E então você os combina com um operador assim:
 
 ```
-{operator}{a|i}{text-object}
+{operador}{a|i}{objeto-de-texto}
 ```
 
-Let's give it a ride. Imagine that you want to change the content (or **i**nner part) of this string. How would you go about it?
+Vamos experimentar. Imagine que você quer mudar o conteúdo (ou parte **i**nterna) desta string. Como você faria isso?
 
 ```typescript
-   you are here!
+   você está aqui!
   /
  /
 v
-const poem = "Roses are red";
+const poema = "Rosas são vermelhas";
 ```
 
-I imagine you may have done the following:
+Imagino que você possa ter feito o seguinte:
 
-1. Jumped to the `R` in roses with `fR`
-2. Changed the contents of the string using `ci`. For example `ci"The sky is blue<ESC>`
+1. Pulou para o `R` em Rosas com `fR`
+2. Mudou o conteúdo da string usando `ci"`. Por exemplo `ci"O céu é azul<ESC>`
 
-And that'd be an excellent way to solve this in Vim. But there's a couple of ways to improve it.
+E essa seria uma excelente forma de resolver isso no Vim. Mas há algumas maneiras de melhorar.
 
-Firstly, operators with text objects apply to the whole text object regardless of where your cursor is located:
+Primeiramente, operadores com objetos de texto se aplicam a todo o objeto de texto independentemente de onde seu cursor está posicionado:
 
 ```typescript
-      Try ci" anywhere here and see that it works
+      Tente ci" em qualquer lugar aqui e veja que funciona
                      /
                     /
              ---------------
-const poem = "Roses are red";
+const poema = "Rosas são vermelhas";
 ```
 
-So anywhere including the quotes themselves is game for applying an operator with the text object. This is really wonderful because it means that commands with text-objects are more repeatable than commands with regular motions. Here goes an example:
+Então qualquer lugar incluindo as próprias aspas é válido para aplicar um operador com o objeto de texto. Isso é realmente maravilhoso porque significa que comandos com objetos-de-texto são mais repetíveis que comandos com movimentos regulares. Aqui vai um exemplo:
 
 ```
-We are going to chance florkin for kitten once more
-Try using:
-  1. cw and .
-  1. ciw and .
+Vamos mudar florkin para gatinho mais uma vez
+Tente usar:
+  1. cw e .
+  1. ciw e .
 
-  you are here
+  você está aqui
   /
  /
 v
@@ -492,150 +494,151 @@ florkin
 florkin
 ```
 
-Did you notice any difference? With `ciw` you can do the following `ciwkitten<ESC>j.` whereas with `cw` you need to course correct and move the cursor to the beginning of the next line `ciwkitten<ESC>0j.`. Why is this necessary? Because `cw` works from the cursor to the beginning of the next word, whereas `ciw` works on the inner word under the cursor. That's why operators with text objects are more repeatable than regular motions, because it they are more resilient to where the cursor is placed as long as it is anywhere on a text object.
+Você notou alguma diferença? Com `ciw` você pode fazer o seguinte `ciwgatinho<ESC>j.` enquanto com `cw` você precisa corrigir o curso e mover o cursor para o começo da próxima linha `ciwgatinho<ESC>0j.`. Por que isso é necessário? Porque `cw` funciona do cursor até o começo da próxima palavra, enquanto `ciw` funciona na palavra interna sob o cursor. É por isso que operadores com objetos de texto são mais repetíveis que movimentos regulares, porque são mais resistentes a onde o cursor está posicionado, desde que esteja em qualquer lugar em um objeto de texto.
 
-Secondly, text objects with quotes `"`, `'` and backtick are special. They have a forward seeking behavior so that **you don't even need to be on top of the text object itself**. Try `ci"` from the beginning of the line below:
+Em segundo lugar, objetos de texto com aspas `"`, `'` e crase são especiais. Eles têm um comportamento de busca para frente de modo que **você nem precisa estar em cima do próprio objeto de texto**. Tente `ci"` desde o começo da linha abaixo:
 
 ```typescript
-   Type ci" directly from the beginning
+   Digite ci" diretamente do início
   /
  /
 v
-const poem = "Roses are red";
+const poema = "Rosas são vermelhas";
 ```
 
-**Isn't that awesome? Just for that Vim deserves a place in VSCode.**
+**Não é incrível? Só por isso o Vim merece um lugar no VSCode.**
 
-> This forward seeking behavior only applies to quotes. For the rest of the text objects you need to have the cursor on top of the text object itself in order to apply a change. There's a plugin in vanilla Vim that extends this behavior to the rest of the text objects which is preeeetty awesome, but it hasn't been yet ported to VSCodeVim.
+> Este comportamento de busca para frente só se aplica a aspas. Para os outros objetos de texto você precisa ter o cursor em cima do próprio objeto de texto para aplicar uma mudança. Há um plugin no Vim vanilla que estende este comportamento para os outros objetos de texto que é muuuito legal, mas ainda não foi portado para o VSCodeVim.
 
 ### a vs i
 
-Let's focus now on understanding the difference between `a` (around) and `i` (inner). Try to **d**elete these florkins using text objects built with both `a` and `i` and see what happens:
+Vamos focar agora em entender a diferença entre `a` (around/ao redor) e `i` (inner/interno). Tente **d**eletar esses florkins usando objetos de texto construídos com ambos `a` e `i` e veja o que acontece:
 
-> Remember that you can undo by simply typing `u`. So try ci(, the type u, then ca(, and so on.
-
-```
-
-parens:       ------------(florkin)------
-brackets:     ---[florkin]---------------
-curly braces: {florkin}......{florkin}...
-quotes:       A "florkin" is not a cat.
-A word:       A florkin is not a cat.
-A sentence:   florkin florkin florkin florkin
+> Lembre-se que você pode desfazer simplesmente digitando `u`. Então tente ci(, depois digite u, então ca(, e assim por diante.
 
 ```
 
-So *i*nner means that it applies to the inner part of a text object, whereas *a*round means that it applies to the complete text object including delimiters (in case of `(`, `{`, `"`, etc) or whitespace in case of words, sentences and paragraphs.
+parênteses:       ------------(florkin)------
+colchetes:       ---[florkin]---------------
+chaves:          {florkin}......{florkin}...
+aspas:           Um "florkin" não é um gato.
+Uma palavra:     Um florkin não é um gato.
+Uma frase:       florkin florkin florkin florkin
 
-### Playing With Text Objects
+```
 
-Ok, now that you understand the fundamentals of text objects let's just practice using operators with text objects with some code and text examples. Let's go!
+Então *i*nner significa que se aplica à parte interna de um objeto de texto, enquanto *a*round significa que se aplica ao objeto de texto completo incluindo delimitadores (no caso de `(`, `{`, `"`, etc) ou espaços em branco no caso de palavras, frases e parágrafos.
+
+### Brincando com Objetos de Texto
+
+Ok, agora que você entende os fundamentos de objetos de texto, vamos praticar usando operadores com objetos de texto com alguns exemplos de código e texto. Vamos lá!
 
 ```javascript
-// #11. Someone changed this code but forgot to update
-// the logger when an error occurs. Can you update the
-// logged message to reflect what the code is doing and
-// be "updating" instead of "retrieving"?
+// #11. Alguém mudou este código mas esqueceu de atualizar
+// o logger quando ocorre um erro. Você pode atualizar a
+// mensagem logada para refletir o que o código está fazendo
+// e ser "atualizando" em vez de "buscando"?
 
-  start here
+  comece aqui
   /
  /
 v
 try {
-  await this.server.update(eatenMuffins);
+  await this.server.update(muffinsComidos);
 } catch (e) {
-  this.logger.error("error retrieving muffins: ", e);
+  this.logger.error("erro buscando muffins: ", e);
   throw e;
 }
 ```
 
 ```javascript
-// #12. For some reason this saluting function only works
-// with florkins, update it so that works with persons
-// instead.
+// #12. Por algum motivo esta função de saudação só funciona
+// com florkins, atualize para que funcione com pessoas
+// em vez disso.
 
-  start here
+  comece aqui
   /
  /
 v
-const hi = (florkin) => console.log(`hi ${florkin}!`);
+const oi = (florkin) => console.log(`oi ${florkin}!`);
 ```
 
 ```javascript
-// #13. This method creates characters in a roguelike game.
-// The initial inventory is way to buffed and is unbalancing
-// the game. Make the initial inventory a simple, yet trusty towel.
-// And don't panic.
+// #13. Este método cria personagens em um jogo roguelike.
+// O inventário inicial está muito poderoso e está desbalanceando
+// o jogo. Faça o inventário inicial ser uma simples, porém confiável toalha.
+// E não entre em pânico.
 
-  start here
+  comece aqui
   /
  /
 v
-function createCharacter(name) {
-  const initialInventory = ["sword +2", "shield", "cloak of invisibility"];
+function criarPersonagem(nome) {
+  const inventarioInicial = ["espada +2", "escudo", "manto da invisibilidade"];
   return {
-    name,
-    inventory: initialInventory,
-    stats: generateRandomStats(),
+    nome,
+    inventario: inventarioInicial,
+    stats: gerarStatsAleatorios(),
   };
 }
 ```
 
 ```javascript
-// #14. The strength stat of Conan can't be anything lower
-// than Infinity. Update the method below to always return
-// Infinity.
+// #14. O stat de força do Conan não pode ser nada menor
+// que Infinito. Atualize o método abaixo para sempre retornar
+// Infinito.
 
-  start here
+  comece aqui
   /
  /
 v
-class Conan extends Barbarian {
-  // code, code, code...
-  get strength() {
-    return this.stats.strength + this.inventory.getStrengthMods();
+class Conan extends Barbaro {
+  // código, código, código...
+  get forca() {
+    return this.stats.forca + this.inventario.getModsForca();
   }
 }
 ```
 
 ```
-// #15. This is the documentation of FizzBuzzJS a completely
-// ficticious JavaScript framework that lets you build fast
-// and ultra performant modern web applications, also known
-// as PUMAW. Since it doesn't exist, please delete it.
+// #15. Esta é a documentação do FizzBuzzJS, um framework
+// JavaScript completamente fictício que permite construir
+// aplicações web modernas rápidas e ultra performáticas,
+// também conhecidas como PUMAW. Como ele não existe,
+// por favor delete-o.
 
-  start here
+  comece aqui
   /
  /
 v
-A FizzBuzzJS model:
-- Manages the state of a portion of your application
-- Notifies when the state changes through events so that consumers of the
-  model can update themselves
-- It's very handsome
+Um modelo FizzBuzzJS:
+- Gerencia o estado de uma porção da sua aplicação
+- Notifica quando o estado muda através de eventos para que consumidores do
+  modelo possam se atualizar
+- É muito bonito
 
 ```
 
-> if you have some trouble getting to the right sentence below try using `gj` instead of `j`, when you prepend `g` before `j` and `k` you can navigate wrapped lines (and not just lines).
+> Se tiver dificuldade em chegar na frase certa abaixo, tente usar `gj` em vez de `j`, quando você prefixa `g` antes de `j` e `k` você pode navegar por linhas quebradas (e não apenas linhas).
 
 ```
-// #16. A florkin has hacked the React documentation and introduced
-// a reference to the FizzBuzzJS framework. Find it and delete it
-// before anyone notices. The future of humankind is in your hands.
+// #16. Um florkin hackeou a documentação do React e introduziu
+// uma referência ao framework FizzBuzzJS. Encontre e delete antes
+// que alguém note. O futuro da humanidade está em suas mãos.
 
-  start here
+  comece aqui
   /
  /
 v
-React makes it painless to create interactive UIs. Design simple views for each state in your application, and React will efficiently update and render just the right components when your data changes. But never as fast as FizzBuzzJS the florkin JS framework. Submit puny humans. Declarative views make your code more predictable and easier to debug.
+React torna indolor a criação de UIs interativas. Projete views simples para cada estado na sua aplicação, e o React atualizará e renderizará eficientemente apenas os componentes certos quando seus dados mudarem. Mas nunca tão rápido quanto o FizzBuzzJS o framework JS florkin. Submetam-se humanos fracos. Views declarativas tornam seu código mais previsível e fácil de debugar.
 
 ```
 
 ```html
-<!-- 
-  #17. Update all the dangerous species below for kittens
+<!--
+  #17. Atualize todas as espécies perigosas abaixo para gatinhos
 
-  start here
+  comece aqui
   /
  /
 v  -->
@@ -649,122 +652,123 @@ v  -->
 ```
 
 ```html
-<!-- 
-  #18. Correct all classes below so that they accurately
-       represent the level of danger of the listed species.
-       
-  start here
+<!--
+  #18. Corrija todas as classes abaixo para que representem
+       com precisão o nível de perigo das espécies listadas.
+
+  comece aqui
   /
  /
 v  -->
 <ul>
-  <li class="deadly">kitten</li>
-  <li class="unthreatening">florkin</li>
-  <li class="unthreatening">blurkin</li>
-  <li class="unthreatening">florkin</li>
-  <li class="unthreatening">human</li>
+  <li class="mortal">gatinho</li>
+  <li class="inofensivo">florkin</li>
+  <li class="inofensivo">blurkin</li>
+  <li class="inofensivo">florkin</li>
+  <li class="inofensivo">humano</li>
 </ul>
 ```
 
-Great job! Feel the Vim mastery coursing through your veeeeins!!!
+Ótimo trabalho! Sinta o domínio do Vim correndo em suas veeeeias!!!
 
 ```
        ____________________
-      | UNLIMITED POWER!!! |
+      | PODER ILIMITADO!!! |
        --------------------
             /
             \
             ↖(^▽^)↗
 ```
 
-## Other Operators
+## Outros Operadores
 
-In addition to `d` and `c` these are other useful operators:
+Além de `d` e `c` estes são outros operadores úteis:
 
-- `y` (yank): Copy in Vim jargon
-- `p` (put): Paste in Vim jargon
-- `g~` (switch case): Changes letters from lowercase to uppercase and back. Alternatively, use `gu` to make something lowercase and `gU` to make something uppercase
-- `>` (shift right): Adds indentation
-- `<` (shift left): Removes indentation
-- `=` (format code): Formats code
+- `y` (yank): Copiar no jargão do Vim
+- `p` (put): Colar no jargão do Vim
+- `g~` (switch case): Muda letras de minúsculas para maiúsculas e vice-versa. Alternativamente, use `gu` para deixar algo em minúsculas e `gU` para deixar em maiúsculas
+- `>` (shift right): Adiciona indentação
+- `<` (shift left): Remove indentação
+- `=` (format code): Formata código
 
-`y` and `p` is how you copy and paste things in Vim. Like `d` and `c`, `y` can be combined with motions and text objects to copy any text that you desire:
+`y` e `p` é como você copia e cola coisas no Vim. Como `d` e `c`, `y` pode ser combinado com movimentos e objetos de texto para copiar qualquer texto que desejar:
 
 ```html
 <!--
-  #19. Clone the florkin in the list item below and
-  create a malevolent army of florkins! Moahahaha.
-  Hint: (It is a line... with what you've learned thus far...
-  how would you copy a line?)
+  #19. Clone o florkin no item de lista abaixo e
+  crie um exército maligno de florkins! Muahahaha.
+  Dica: (É uma linha... com o que você aprendeu até agora...
+  como você copiaria uma linha?)
 
-  start here!
+  comece aqui!
    /
  /
 v      -->
 <ul>
-  <li class="dangerous">florkin</li>
+  <li class="perigoso">florkin</li>
 </ul>
 ```
 
-There is a complete chapter where we'll dive deeper into copying and pasting, so let's move on to the last operators `g~`, `>`, `<` and `=`. The text below is wronly indented and it has some issues with letter casing. Can you fix it?
+Há um capítulo inteiro onde vamos nos aprofundar em copiar e colar, então vamos para os últimos operadores `g~`, `>`, `<` e `=`. O texto abaixo está erroneamente indentado e tem alguns problemas com caixa de letras. Você pode consertar?
 
-> Formatting is less of an issue if you're using a formatter like prettier. But it can come in handy in situations where no formatter is available.
+> Formatação é menos problemática se você está usando um formatador como o prettier. Mas pode ser útil em situações onde nenhum formatador está disponível.
 
 ```
 <ul>
-  <LI>wot</LI>
-    <li>wot</li>
-        <li>wot</li>
-    <li>wot</li>
-  <lI>wot</lI>
+  <LI>que</LI>
+    <li>que</li>
+        <li>que</li>
+    <li>que</li>
+  <lI>que</lI>
 </ul>
 ```
 
-## More Short-hand Operators
+## Mais Operadores Abreviados
 
-- `x` is equivalent to `dl` and deletes the character under the cursor
-- `X` is equivalent to `dh` and deletes the character before the cursor
-- `s` is equivalent to `ch`, deletes the character under the cursor and puts you into Insert mode
-- `r` allows you to replace one single character for another. Very handy to fix typos.
-- `~` to switch case for a single character
+- `x` é equivalente a `dl` e deleta o caractere sob o cursor
+- `X` é equivalente a `dh` e deleta o caractere antes do cursor
+- `s` é equivalente a `ch`, deleta o caractere sob o cursor e te coloca em modo inserção
+- `r` permite que você substitua um único caractere por outro. Muito útil para corrigir erros de digitação.
+- `~` para alternar caixa de um único caractere
 
-A nice way use case for `x` is to swap a couple of characters when you make a typo. You remove (and cut) a character with `x` and immediately paste it after the cursor with `p`. Try it!
+Um bom caso de uso para `x` é trocar um par de caracteres quando você comete um erro de digitação. Você remove (e recorta) um caractere com `x` e imediatamente o cola depois do cursor com `p`. Experimente!
 
 ```
-  #20. Can you fix this typos?
+  #20. Você pode consertar estes erros de digitação?
 
-  Start here!
+  Comece aqui!
   /
  /
 v
-I am realyl hapyp!
+Eu sou realyl feliz!
 ```
 
-> Oh... Did I forget to tell you? `d`, `c`, `x` and `s` in addition to removing and changing also cut (so whatever you remove or change is available in your clipboard). We'll dive deeper into this in the upcoming chapter on copying and pasting.
+> Ah... Eu esqueci de te contar? `d`, `c`, `x` e `s` além de remover e alterar também recortam (então qualquer coisa que você remove ou altera fica disponível na sua área de transferência). Vamos nos aprofundar nisso no próximo capítulo sobre copiar e colar.
 
-## Celebrate!
+## Celebre!
 
-This was a reaaally long chapter full of exercises. **Congratulations on reaching the end! Great job!** Now you have a much better grasp of Vim's motions and operators. Just a little more practice and you'll be kicking ass in no time.
+Este foi um capítulo muuuuito longo cheio de exercícios. **Parabéns por chegar ao fim! Ótimo trabalho!** Agora você tem um entendimento muito melhor dos movimentos e operadores do Vim. Só um pouco mais de prática e você estará arrasando em pouco tempo.
 
 ```
 |￣￣￣￣￣￣￣￣￣￣￣|
-|  AWESOME JOB!    |
-|  CELEBRATEEE !   |
+|  TRABALHO       |
+|  INCRÍVEL!     |
+|  CELEBRE !     |
 |＿＿＿＿＿＿＿＿＿＿＿|
 
       ヽ(^o^)ノ
 ```
 
-# Solutions to some of the exercises
+# Soluções para alguns exercícios
 
-## Solutions Delete
+## Soluções Delete
 
 ```
-  #1. start here florkin avenger!
-  Can you obliterate these florkins with just one command?
+  #1. comece aqui florkin vingador!
+  Você consegue obliterar esses florkins com apenas um comando?
   /
  /
-v (d4j obliterates all the florkins at once)(5dd)
+v (d4j oblitera todos os florkins de uma vez)(5dd)
 florkin
 florkin
 florkin
@@ -773,7 +777,7 @@ florkin
 ```
 
 ```
-  #2. start here!
+  #2. comece aqui!
   /
  /
 v (ffdt')
@@ -781,7 +785,7 @@ v (ffdt')
 ```
 
 ```
-  #3. start here!
+  #3. comece aqui!
   /
  /
 v (/fldt'ndt-ndt})
@@ -794,47 +798,47 @@ v (/fldt'ndt-ndt})
 ```
 
 ```
-  #4. start here
+  #4. comece aqui
   /
  /
-v (d/cu<ENTER>)
+v (d/pe<ENTER>)
 florkin
 florkin
 florkin
-cucumber
+pepino
 ```
 
 ```
-  #5. start here!
+  #5. comece aqui!
   /
  /
 v (ddjddjdd) (ddj.j.)
 florkin florkin florkin florkin
-kitten
+gatinho
 florkin florkin
-kitten
+gatinho
 florkin
 ```
 
 ```
-  #6. start here!
+  #6. comece aqui!
   /
  /
 v (ddjwDjdd2wDjhD)
-kitten florkin florkin
+gatinho florkin florkin
 florkin florkin
-kitten kitten florkin
-kitten puppy florkin
+gatinho gatinho florkin
+gatinho cachorrinho florkin
 ```
 
-## Solutions Change
+## Soluções Change
 
 ```
-  #7. start here florkin avenger!
-  Change these florkin into kittens!
+  #7. comece aqui florkin vingador!
+  Mude esses florkins para gatinhos!
   /
  /
-v (cwkitten<ESC>jb.jb.jb.jb.)(cckitten<ESC>j.j.j.j.)
+v (cwgatinho<ESC>jb.jb.jb.jb.)(ccgatinho<ESC>j.j.j.j.)
 florkin
 florkin
 florkin
@@ -843,18 +847,18 @@ florkin
 ```
 
 ```
-  #8. start here!
+  #8. comece aqui!
   /
  /
-v (ffct'kitten<ESC>)
+v (ffct'gatinho<ESC>)
 -----=t--=v----'florkin'--------=
 ```
 
 ```
-  #9. start here!
+  #9. comece aqui!
   /
  /
-v (/fl<ENTER>cfnkitten<ESC>n.n.)
+v (/fl<ENTER>cfngatinho<ESC>n.n.)
 -------'florkin'------------
 ----v--------v--------------
 ---v------v----vflorkin-----
@@ -864,127 +868,128 @@ v (/fl<ENTER>cfnkitten<ESC>n.n.)
 ```
 
 ```
-  #10. start here!
+  #10. comece aqui!
   /
  /
-v (cckitten<ESC>j.j.)
+v (ccgatinho<ESC>j.j.)
 florkin
 florkin
 florkin
-cucumber
+pepino
 ```
 
 ```javascript
-// #11. Someone changed this code but forgot to update
-// the logger when an error occurs. Can you update the
-// logged message to reflect what the code is doing and
-// be "updating" instead of "retrieving"?
+// #11. Alguém mudou este código mas esqueceu de atualizar
+// o logger quando ocorre um erro. Você pode atualizar a
+// mensagem logada para refletir o que o código está fazendo
+// e ser "atualizando" em vez de "buscando"?
 
-  start here
+  comece aqui
   /
  /
-v (/re<ENTER>ciwupdating<ESC>)
+v (/re<ENTER>ciwatualizando<ESC>)
 try {
-  await this.server.update(eatenMuffins);
+  await this.server.update(muffinsComidos);
 } catch (e) {
-  this.logger.error("error retrieving muffins:", e);
+  this.logger.error("erro buscando muffins:", e);
   throw e;
 }
 ```
 
 ```javascript
-// #12. For some reason this saluting function only works
-// with florkins, update it so that works with persons
-// instead.
+// #12. Por algum motivo esta função de saudação só funciona
+// com florkins, atualize para que funcione com pessoas
+// em vez disso.
 
-  start here
+  comece aqui
   /
  /
-v (ffciwperson<ESC>;.)
-const hi = (florkin) => console.log(`hi ${florkin}!`);
-// you may be tempted to use ci( but in this case ciw is more repeteable
+v (ffciwpessoa<ESC>;.)
+const oi = (florkin) => console.log(`oi ${florkin}!`);
+// você pode ficar tentado a usar ci( mas neste caso ciw é mais repetível
 ```
 
 ```javascript
-// #13. This method creates characters in a roguelike game.
-// The initial inventory is way to buffed and is unbalancing
-// the game. Make the initial inventory a simple, yet trusty towel.
-// And don't panic.
+// #13. Este método cria personagens em um jogo roguelike.
+// O inventário inicial está muito poderoso e está desbalanceando
+// o jogo. Faça o inventário inicial ser uma simples, porém confiável toalha.
+// E não entre em pânico.
 
-  start here
+  comece aqui
   /
  /
-v (/[<ENTER>ci["towel"<ESC>)
-function createCharacter(name) {
-  const initialInventory = ["sword +2", "shield", "cloak of invisibility"];
+v (/[<ENTER>ci["toalha"<ESC>)
+function criarPersonagem(nome) {
+  const inventarioInicial = ["espada +2", "escudo", "manto da invisibilidade"];
   return {
-    name,
-    inventory: initialInventory,
-    stats: generateRandomStats(),
+    nome,
+    inventario: inventarioInicial,
+    stats: gerarStatsAleatorios(),
   };
 }
 ```
 
 ```javascript
-// #14. The strength stat of Conan can't be anything lower
-// than Infinity. Update the method below to always return
-// Infinity.
+// #14. O stat de força do Conan não pode ser nada menor
+// que Infinito. Atualize o método abaixo para sempre retornar
+// Infinito.
 
-  start here
+  comece aqui
   /
  /
-v // (3jci{return Infinity;<ESC>)
-  // (/ret<ENTER>wCInfinity;<ESC>)
-  // (/ret<ENTER>wct;Infinity<ESC>)
-class Conan extends Barbarian {
-  // code, code, code...
-  get strength() {
-    return this.stats.strength + this.inventory.getStrengthMods();
+v // (3jci{return Infinito;<ESC>)
+  // (/ret<ENTER>wCInfinito;<ESC>)
+  // (/ret<ENTER>wct;Infinito<ESC>)
+class Conan extends Barbaro {
+  // código, código, código...
+  get forca() {
+    return this.stats.forca + this.inventario.getModsForca();
   }
 }
 ```
 
 ```
-// #15. This is the documentation of FizzBuzzJS a completely
-// ficticious JavaScript framework that lets you build fast
-// and ultra performant modern web applications, also known
-// as PUMAW. Since it doesn't exist, please delete it.
+// #15. Esta é a documentação do FizzBuzzJS, um framework
+// JavaScript completamente fictício que permite construir
+// aplicações web modernas rápidas e ultra performáticas,
+// também conhecidas como PUMAW. Como ele não existe,
+// por favor delete-o.
 
-  start here
+  comece aqui
   /
  /
 v (dap)
-A FizzBuzzJS model:
-- Manages the state of a portion of your application
-- Notifies when the state changes through events so that consumers of the
-  model can update themselves
-- It's very handsome
+Um modelo FizzBuzzJS:
+- Gerencia o estado de uma porção da sua aplicação
+- Notifica quando o estado muda através de eventos para que consumidores do
+  modelo possam se atualizar
+- É muito bonito
 
 ```
 
-> if you have some trouble getting to the right sentence below try using `gj` instead of `j`, when you prepend `g` before `j` and `k` you can navigate wrapped lines (and not just lines).
+> Se tiver dificuldade em chegar na frase certa abaixo, tente usar `gj` em vez de `j`, quando você prefixa `g` antes de `j` e `k` você pode navegar por linhas quebradas (e não apenas linhas).
 
 ```
-// #16. A florkin has hacked the React documentation and introduced
-// a reference to the FizzBuzzJS framework. Find it and delete it
-// before anyone notices. The future of humankind is in your hands.
+// #16. Um florkin hackeou a documentação do React e introduziu
+// uma referência ao framework FizzBuzzJS. Encontre e delete antes
+// que alguém note. O futuro da humanidade está em suas mãos.
 
-  start here
+  comece aqui
   /
  /
 v (/Bu<ENTER>2das)
-React makes it painless to create interactive UIs. Design simple views for each state in your application, and React will efficiently update and render just the right components when your data changes. But never as fast as FizzBuzzJS the florkin JS framework. Submit puny humans. Declarative views make your code more predictable and easier to debug.
+React torna indolor a criação de UIs interativas. Projete views simples para cada estado na sua aplicação, e o React atualizará e renderizará eficientemente apenas os componentes certos quando seus dados mudarem. Mas nunca tão rápido quanto o FizzBuzzJS o framework JS florkin. Submetam-se humanos fracos. Views declarativas tornam seu código mais previsível e fácil de debugar.
 
 ```
 
 ```html
-<!-- 
-  #17. Update all the dangerous species below for kittens
+<!--
+  #17. Atualize todas as espécies perigosas abaixo para gatinhos
 
-  start here
+  comece aqui
   /
  /
-v (jcitkitten<ESC>j.jj.) -->
+v (jcitgatinho<ESC>j.jj.) -->
 <ul>
   <li>florkin</li>
   <li>florkin</li>
@@ -995,43 +1000,43 @@ v (jcitkitten<ESC>j.jj.) -->
 ```
 
 ```html
-<!-- 
-  #18. Correct all classes below so that they accurately
-       represent the level of danger of the listed species.
+<!--
+  #18. Corrija todas as classes abaixo para que representem
+       com precisão o nível de perigo das espécies listadas.
 
-  start here
+  comece aqui
   /
  /
-v (jjci"deadly<ESC>jj.) -->
+v (jjci"mortal<ESC>jj.) -->
 <ul>
-  <li class="deadly">kitten</li>
-  <li class="unthreatening">florkin</li>
-  <li class="unthreatening">blurkin</li>
-  <li class="unthreatening">florkin</li>
-  <li class="unthreatening">human</li>
+  <li class="mortal">gatinho</li>
+  <li class="inofensivo">florkin</li>
+  <li class="inofensivo">blurkin</li>
+  <li class="inofensivo">florkin</li>
+  <li class="inofensivo">humano</li>
 </ul>
 ```
 
 ```html
 <!--
-  #19. Clone the florkin in the list item below and
-  create a malevolent army of florkins! Moahahaha.
+  #19. Clone o florkin no item de lista abaixo e
+  crie um exército maligno de florkins! Muahahaha.
 
-  start here!
+  comece aqui!
    /
  /
 v (jyy5p)     -->
 <ul>
-  <li class="dangerous">florkin</li>
+  <li class="perigoso">florkin</li>
 </ul>
 ```
 
 ```
-  #20. Can you fix this typos?
+  #20. Você pode consertar estes erros de digitação?
 
-  Start here!
+  Comece aqui!
   /
  /
 v (fyxp;xp)
-I am realyl hapyp!
+Eu sou realyl feliz!
 ```

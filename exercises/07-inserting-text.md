@@ -1,17 +1,16 @@
-# Inserting Text
+# Inserindo Texto
 
-So far we've been focusing a lot in _Normal mode_ and we haven't paid much attention to _Insert mode_. Let's remedy that because there's a lot more to _Insert mode_ in Vim that you can imagine.
+Até agora focamos muito no *Modo Normal* e não demos muita atenção ao *Modo de Inserção*. Vamos remediar isso porque há muito mais no *Modo de Inserção* do Vim do que você imagina.
 
-The flexibility provided by the many ways you can jump into _Insert mode_ is legendary:
+A flexibilidade proporcionada pelas várias formas de entrar no *Modo de Inserção* é lendária:
 
-- `i` lets you *i*nsert text before the cursor
-- `a` lets you *a*ppend text after the cursor
-- `I` lets you *i*nsert text at the beginning of a line
-- `A` lets you *a*ppend text at the end of a line
+- `i` permite *i*nserir texto antes do cursor
+- `a` permite *a*crescentar texto após o cursor
+- `I` permite *i*nserir texto no início da linha
+- `A` permite *a*crescentar texto no final da linha
 
 ```javascript
-
-           you are here
+           você está aqui
                /
               /
              v
@@ -19,31 +18,28 @@ The flexibility provided by the many ways you can jump into _Insert mode_ is leg
       ^     ^ ^                   ^
       |     | |                   |
       I     i a                   A
-
 ```
 
-- `o` lets you *o*pen a new line below the current line
-- `O` lets you *o*pen a new line above the current line
+- `o` permite *o*brir uma nova linha abaixo da linha atual
+- `O` permite *o*brir uma nova linha acima da linha atual
 
-> These two commands are some of my very favorite ones. It's so common and handy to add a new line below or above the current code line!
+> Esses dois comandos são alguns dos meus favoritos. É tão comum e útil adicionar uma nova linha abaixo ou acima da linha de código atual!
 
 ```javascript
-
-           you are here
+           você está aqui
                /
               /
    O ->      v
        const status = "I'm in awe"
    o ->
-
 ```
 
-With all these commands you can pretty much jump into insert mode anywhere. Let's take them for a spin!
+Com todos esses comandos você pode basicamente entrar no modo de inserção em qualquer lugar. Vamos testá-los!
 
-> You can find all solutions at the end of this file. Just search for /solutions. To come back here type <CTRL-O>.
+> Você pode encontrar todas as soluções no final deste arquivo. Basta pesquisar por /solutions. Para voltar aqui digite <CTRL-O>.
 
 ```
-  #1. This sentence is missing a lot of punctuation, could you use you newly acquired knowledge and add some punctuation? (see if you can use both a and A)
+  #1. Esta frase está faltando muita pontuação, você poderia usar seu conhecimento recém-adquirido e adicionar alguma pontuação? (veja se consegue usar tanto a quanto A)
   /
  /
 v
@@ -51,15 +47,15 @@ I like potatos onions bacon milk and chocolate
 ```
 
 ```javascript
-// #2. Add at least four heroines more!
-// Try using both o and O.
+// #2. Adicione pelo menos quatro heroínas a mais!
+// Tente usar tanto o quanto O.
 
 const heroines = [
-  "Malin Gonzalez Lejon", // <-- My wife <3<3<3
+  "Malin Gonzalez Lejon", // <-- Minha esposa <3<3<3
   "Wonder woman",
   "Red Sonja",
   "Captain Marvel",
-  "Tika Waylan", // <-- you are here
+  "Tika Waylan", // <-- você está aqui
   "Cara Dune",
   "Laurana Kanan",
   "Nona Grey",
@@ -67,12 +63,12 @@ const heroines = [
 ```
 
 ```javascript
-// #3. Add an additional filter
-// condition to verify that the potatos
-// aren't green. Tasty potatos must be
-// well mature.
+// #3. Adicione uma condição adicional de filtro
+// para verificar que as batatas
+// não estão verdes. Batatas saborosas devem estar
+// bem maduras.
 
-  start here
+  comece aqui
   /
  /
 v
@@ -81,14 +77,14 @@ const tastyPotatos = bagsOfPotatos
   .filter((potato) => !potato.isRotten);
 ```
 
-The next handy mapping to jump into _Insert mode_ is `gi`. `gi` let's you go back to the last place where you made a change.
+O próximo mapeamento útil para entrar no *Modo de Inserção* é `gi`. `gi` permite que você volte ao último local onde fez uma alteração.
 
-> `gi` in VSCodeVim behaves differently than in Vim. Where in Vim you go back to the last place you left Insert mode, in VSCodeVim you get into insert mode where you did you last change.
+> `gi` no VSCodeVim se comporta de forma diferente do Vim. Enquanto no Vim você volta ao último lugar onde saiu do Modo de Inserção, no VSCodeVim você entra no modo de inserção onde fez sua última alteração.
 
 ```
-// #4. Type your first name, then move you cursor until the landing location and go back to type your surname with gi
+// #4. Digite seu primeiro nome, depois mova o cursor até o local de pouso e volte para digitar seu sobrenome com gi
 
-  start here
+  comece aqui
   /
  /
 v
@@ -104,40 +100,40 @@ My name is
       =
 ```
 
-> Notice how often `g` is used as a modifier of other commands. When you see `g` before a common command you can expect that the command will do something similar to the original command: For example, `gi` lets you go to the last place you left Insert mode (`i`), `ge` does the reverse of `e`, etc...
+> Observe como frequentemente `g` é usado como modificador de outros comandos. Quando você vê `g` antes de um comando comum, pode esperar que o comando fará algo similar ao comando original: Por exemplo, `gi` permite ir ao último lugar onde você saiu do Modo de Inserção (`i`), `ge` faz o reverso de `e`, etc...
 
-# Removing stuff from Insert mode
+# Removendo coisas no Modo de Inserção
 
-By far the most common way of removing stuff when using Vim is using the `d` or `c` commands from _Normal mode_, however, sometimes it's useful to remove some text right from _Insert mode_ and continue typing. Most common example? When you make a typo! :D Whenever that happens any of these bindings may help:
+De longe, a forma mais comum de remover coisas ao usar Vim é usando os comandos `d` ou `c` do *Modo Normal*, porém, às vezes é útil remover algum texto diretamente do *Modo de Inserção* e continuar digitando. Exemplo mais comum? Quando você comete um erro de digitação! :D Sempre que isso acontecer, qualquer um desses atalhos pode ajudar:
 
-- `CTRL-H` lets you remove the last character you typed (mnemonic _h_ which in _hjkl_ brings the cursor one space to the left)
-- `CTRL-W` lets you remove the last word you typed (mnemonic *w*ord)
-- `CTRL-U` lets you remove the last line you typed (mnemonic *u*ndo this line)
+- `CTRL-H` permite remover o último caractere digitado (mnemônico _h_ que em _hjkl_ move o cursor um espaço para a esquerda)
+- `CTRL-W` permite remover a última palavra digitada (mnemônico *w*ord - palavra)
+- `CTRL-U` permite remover a última linha digitada (mnemônico *u*ndo this line - desfazer esta linha)
 
-Let's take it for a ride:
+Vamos testar:
 
 ```
-// 5#. Try to repeat these following sentences and use CTRL-H, CTRL-W to recover
-// from typos. When you get to the end type CTRL-U.
+// 5#. Tente repetir estas frases seguintes e use CTRL-H, CTRL-W para corrigir
+// erros de digitação. Quando chegar ao final, digite CTRL-U.
 
- start here!
+ comece aqui!
   /
  /
 v
 supercalifragilisticusespialidosus
-(good luck!)
+(boa sorte!)
 
 tres tristres trapezistas con tres trapos troceados hacen trampas truculentas
-(lots and lots of good luck)
+(muita, muita boa sorte)
 
 Sju sjösjuka sjömän sköttes av sjuttiosju sköna sjuksköterskor på det sjunkande skeppet Shanghai.
-(there's no way you can type this without making mistakes)
-(Ok. Maybe if you're Swedish)
+(não tem como digitar isso sem errar)
+(Ok. Talvez se você for sueco)
 ```
 
-> In reality these commands all affect characters behind your cursor, but the "last word you typed", "last line you typed", etc is easier to understand. Or at least that's what I think :D
+> Na realidade, esses comandos afetam caracteres atrás do cursor, mas "última palavra digitada", "última linha digitada", etc é mais fácil de entender. Ou pelo menos é o que eu acho :D
 
-Great job! For the last act try to exit _Insert mode_ using these three commands and see which one feels best for you:
+Ótimo trabalho! Para o ato final, tente sair do *Modo de Inserção* usando estes três comandos e veja qual parece melhor para você:
 
 - `<ESC>`
 - `CTRL-C`
@@ -149,17 +145,17 @@ Great job! For the last act try to exit _Insert mode_ using these three commands
 ***********
 ```
 
-> HOT TIP: There are some tools and mechanic keyboards that allow you to map CAPS LOCK to ESC and CTRL AT THE SAME TIME! The CAPS LOCK can behave as ESC when typed on its own, or CTRL when typed in combination with other keys. THIS IS THE BEST WAY TO USE IT WITH VIM :D. Having both ESC and CTRL in the home row is THE BEST experience a Vimmer can hope for. I know of two ways to achieve it:
+> DICA QUENTE: Existem algumas ferramentas e teclados mecânicos que permitem mapear CAPS LOCK para ESC e CTRL AO MESMO TEMPO! O CAPS LOCK pode se comportar como ESC quando pressionado sozinho, ou CTRL quando pressionado em combinação com outras teclas. ESTA É A MELHOR FORMA DE USÁ-LO COM VIM :D. Ter tanto ESC quanto CTRL na home row É A MELHOR experiência que um usuário de Vim pode desejar. Eu conheço duas formas de conseguir isso:
 >
-> 1. In Mac you can use [karabiner-elements](https://karabiner-elements.pqrs.org/)
-> 2. The [UHK](https://ultimatehackingkeyboard.com/) and other mechanic keyboards allow you to remap your complete keyboard and achieve the ESC/CTRL combo of doom
+> 1. No Mac você pode usar [karabiner-elements](https://karabiner-elements.pqrs.org/)
+> 2. O [UHK](https://ultimatehackingkeyboard.com/) e outros teclados mecânicos permitem remapear completamente seu teclado e alcançar o combo ESC/CTRL da destruição
 >
-> If you find out more. Please let me know! https://www.twitter.com/Vintharas
+> Se descobrir mais formas. Por favor me avise! https://www.twitter.com/Vintharas
 
-## Solutions
+## Soluções
 
 ```
-  #1. This sentence is missing a lot of punctuation, could you use you newly acquired knowledge and add some punctuation?
+  #1. Esta frase está faltando muita pontuação, você poderia usar seu conhecimento recém-adquirido e adicionar alguma pontuação?
   /
  /
 v (fsa,e.e.A.)
@@ -167,15 +163,15 @@ I like potatos onions bacon milk and chocolate
 ```
 
 ```javascript
-// #2. Add at least four heroines more!
-// Try using both o and O.
+// #2. Adicione pelo menos quatro heroínas a mais!
+// Tente usar tanto o quanto O.
 
-// (o"Someone"<ESC>O"someone"<ESC>)
+// (o"Alguém"<ESC>O"outra"<ESC>)
 const heroines = [
   "Wonder woman",
   "Red Sonja",
   "Captain Marvel",
-  "Tika Waylan", // <-- you are here
+  "Tika Waylan", // <-- você está aqui
   "Cara Dune",
   "Laurana Kanan",
   "Nona Grey",
@@ -183,24 +179,24 @@ const heroines = [
 ```
 
 ```javascript
-// #3. Add an additional filter
-// condition to verify that the potatos
-// aren't green. Tasty potatos must be
-// well mature.
+// #3. Adicione uma condição adicional de filtro
+// para verificar que as batatas
+// não estão verdes. Batatas saborosas devem estar
+// bem maduras.
 
-  start here
+  comece aqui
   /
  /
-v (2jo.filter((potato)=> !potato.isGreen))
+v (2jo.filter((batata)=> !batata.isGreen))
 const tastyPotatos = bagsOfPotatos
   .flatmap((bag) => bag.potatos)
   .filter((potato) => !potato.isRotten);
 ```
 
 ```
-// #4. Type your first name, then move you cursor until the landing location and go back to type your surname with gi
+// #4. Digite seu primeiro nome, depois mova o cursor até o local de pouso e volte para digitar seu sobrenome com gi
 
-  start here
+  comece aqui
   /
  /
 v (AJaime<ESC>/x<ENTER>gi)

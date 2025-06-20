@@ -1,69 +1,69 @@
-# Swiftly Operating on Search Matches
+# Operando Rapidamente em Resultados de Busca
 
-Let's get on with the example in this chapter and become a rugged cucumber head hunter. Cucumbers see you and they tremble in fear!
+Vamos começar com o exemplo deste capítulo e nos tornar implacáveis caçadores de pepinos. Os pepinos te veem e tremem de medo!
 
-For the first exercise we'll use a combination of:
+Para o primeiro exercício, usaremos uma combinação de:
 
-- `n` to go to the next item matching a search (sort of repeating a search)
-- `.` to repeat the last change
+- `n` para ir para o próximo item correspondente a uma busca (como repetir uma busca)
+- `.` para repetir a última alteração
 
 ```
-#1. Destroy all cucumbers!! Use the `d` command in combination with `/`, `n` and `.`
+#1. Destrua todos os pepinos!! Use o comando `d` em combinação com `/`, `n` e `.`
 
-  start here
+  comece aqui
   /
  /
 v
-cucumber carrot lettuce
-cabbage carrot lettuce cucumber
-cucumber cucumber carrot
-kale cucumber kale
+pepino cenoura alface
+repolho cenoura alface pepino
+pepino pepino cenoura
+couve pepino couve
 ```
 
-> Remember you can find the solutions by searching for /Solutions. To come back use <CTRL-O>.
+> Lembre-se que você pode encontrar as soluções pesquisando por /Solutions. Para voltar use <CTRL-O>.
 
-Now let's try the same example with the `gn` operator:
+Agora vamos tentar o mesmo exemplo com o operador `gn`:
 
 ```
-#2. Now use `gn`. I won't tell you how. You have to strain to remember from reading the chapter or just try things like a crazy maniac cucumber annihilator
+#2. Agora use `gn`. Não vou te dizer como. Você precisa se esforçar para lembrar da leitura do capítulo ou simplesmente tentar coisas como um louco exterminador de pepinos
 
-  start here
+  comece aqui
   /
  /
 v
-cucumber carrot lettuce
-cabbage carrot lettuce cucumber
-cucumber cucumber carrot
-kale cucumber kale
+pepino cenoura alface
+repolho cenoura alface pepino
+pepino pepino cenoura
+couve pepino couve
 ```
 
-Cool right?
+Legal, né?
 
-## Solutions
+## Soluções
 
 ```
-#1. Destroy all cucumbers!! Use the `d` command in combination with `/`, `n` and `.`
+#1. Destrua todos os pepinos!! Use o comando `d` em combinação com `/`, `n` e `.`
 
-  start here
+  comece aqui
   /
  /
-v (/cu<ENTER>dawn.n..n.)
-cucumber carrot lettuce
-cabbage carrot lettuce cucumber
-cucumber cucumber carrot
-kale cucumber kale
+v (/pe<ENTER>dawn.n..n.)
+pepino cenoura alface
+repolho cenoura alface pepino
+pepino pepino cenoura
+couve pepino couve
 ```
 
 ```
-#2. Now use `gn`. I won't tell you how. You have to strain to remember from reading the chapter or just try things like a crazy maniac cucumber annihilator
+#2. Agora use `gn`. Não vou te dizer como. Você precisa se esforçar para lembrar da leitura do capítulo ou simplesmente tentar coisas como um louco exterminador de pepinos
 
-  start here
+  comece aqui
   /
  /
-v /cucumber<ENTER>dgn4.              => this doesn't quite achieve the same result
-v /(cucumber | cucumber)<ENTER>dgn4. => this achieves the same result using regexp
-cucumber carrot lettuce
-cabbage carrot lettuce cucumber
-cucumber cucumber carrot
-kale cucumber kale
+v /pepino<ENTER>dgn4.              => isso não alcança exatamente o mesmo resultado
+v /(pepino | pepino)<ENTER>dgn4. => isso alcança o mesmo resultado usando regex
+pepino cenoura alface
+repolho cenoura alface pepino
+pepino pepino cenoura
+couve pepino couve
 ```

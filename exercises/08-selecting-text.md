@@ -1,156 +1,156 @@
-# Selecting Text
+# Selecionando Texto
 
-_Visual mode_ is the Vim equivalent of dragging your mouse and selecting arbitrary bits of text. Let's try out the three different ways you can select text in Visual mode:
+O *Modo Visual* é o equivalente no Vim de arrastar o mouse e selecionar partes arbitrárias de texto. Vamos experimentar as três formas diferentes de selecionar texto no Modo Visual:
 
-- `v` for character-wise visual mode
-- `V` for line-wise visual mode
-- `C-V` for block-wise visual mode
+- `v` para modo visual caractere por caractere
+- `V` para modo visual linha por linha
+- `C-V` para modo visual em bloco
 
-Now use all of the above in the following exercise:
-
-```
-// #1. Try selecting some text using v, V and C-V in the
-// following text. Combine these with `hjkl` and other
-// motions to perform your selection once you've entered
-// Visual mode.
-// Example: (vll2lwbww)
-
-"It is better to go forward without a goal,
-than to have a goal and stay in one place,
-and it is certainly better than to stay in one
-place without a goal.”
-    - The Tower of the Swallow (The Witcher #4)
-```
-
-Cool right? **The best part is that you can combine Visual mode with all the motions you've learned in previous chapters to select text to your heart's content**. The next step is to do something with that selection. And you guessed right. That's where operators come in.
-
-Where with _Normal mode_ we apply an operator by using:
+Agora use todos os acima no seguinte exercício:
 
 ```
- action to perform
+// #1. Tente selecionar algum texto usando v, V e C-V no
+// texto a seguir. Combine estes com `hjkl` e outros
+// movimentos para realizar sua seleção após entrar
+// no Modo Visual.
+// Exemplo: (vll2lwbww)
+
+"É melhor seguir em frente sem um objetivo,
+do que ter um objetivo e ficar parado,
+e certamente é melhor do que ficar parado
+sem um objetivo."
+    - A Torre da Andorinha (The Witcher #4)
+```
+
+Legal, né? **A melhor parte é que você pode combinar o Modo Visual com todos os movimentos que aprendeu nos capítulos anteriores para selecionar texto à vontade**. O próximo passo é fazer algo com essa seleção. E você adivinhou: é aí que os operadores entram.
+
+Enquanto no *Modo Normal* aplicamos um operador usando:
+
+```
+ ação a executar
   /
  /
-{operator}{count}{motion}
+{operador}{contagem}{movimento}
           ---------------
              /
             /
-        bit of text over which
-        to apply that action
+        trecho de texto sobre o qual
+        aplicar essa ação
 ```
 
-In _Visual mode_ we apply an operator in the opposite way. First we select some text visually, then we apply the operator:
+No *Modo Visual* aplicamos um operador de forma oposta. Primeiro selecionamos algum texto visualmente, depois aplicamos o operador:
 
 ```
-get into Visual Mode
+entrar no Modo Visual
     /
-   /                  action to apply
+   /                  ação a aplicar
   /                         /
 ---------                  /
-{v|V|C-V}{count}{motion}{operator}
+{v|V|C-V}{contagem}{movimento}{operador}
          ---------------
            /
           /
-   bit of text over which
-   to apply an action
+   trecho de texto sobre o qual
+   aplicar uma ação
 ```
 
-Now that we have some foundation of how _Visual mode_ works let's try it out and retouch parts of the previous example. Try to perform this changes both from _Normal mode_ and _Visual mode_ so you can appreciate the difference.
+Agora que temos alguma base de como o *Modo Visual* funciona, vamos testá-lo e retocar partes do exemplo anterior. Tente realizar estas alterações tanto do *Modo Normal* quanto do *Modo Visual* para perceber a diferença.
 
-> Remember you can find the solutions by searching for /Solutions. To come back use <CTRL-O>.
+> Lembre-se que você pode encontrar as soluções pesquisando por /Solutions. Para voltar use <CTRL-O>.
 
 ```
-// #2. Complete these transformations using both
-// *Normal mode* and *Visual mode*.
+// #2. Complete estas transformações usando tanto
+// *Modo Normal* quanto *Modo Visual*.
 //
-// 1. Remove "It is"
-// 2. better => Better
-// 3. in one place, => in one place.
-// 4. delete everything after that
+// 1. Remover "É"
+// 2. melhor => Melhor
+// 3. parado, => parado.
+// 4. apague tudo depois disso
 
- start here
+ comece aqui
   /
  /
 v
-"It is better to go forward without a goal,
-than to have a goal and stay in one place,
-and it is certainly better than to stay in one
-place without a goal.”
-    - The Tower of the Swallow (The Witcher #4)
+"É melhor seguir em frente sem um objetivo,
+do que ter um objetivo e ficar parado,
+e certamente é melhor do que ficar parado
+sem um objetivo."
+    - A Torre da Andorinha (The Witcher #4)
 ```
 
-Now let's focus on **Block-wise Visual mode** also known as **Visual Block** which is quite special. Visual block is useful when you want to things with a block of text and come particularly handy when you want to pre-pend or append something to a block of text. Select a block of text with visual block and:
+Agora vamos focar no **Modo Visual em Bloco**, também conhecido como **Visual Block**, que é bastante especial. O Visual Block é útil quando você quer fazer coisas com um bloco de texto e é particularmente prático quando você quer adicionar algo antes ou depois de um bloco de texto. Selecione um bloco de texto com Visual Block e:
 
-- Type `I` to jump into _Insert mode_ and _prepend_ something to all lines in the beginning of the block.
-- Type `A` to do the same but this time _append_ something to all lines at the end of the block.
+- Digite `I` para entrar no *Modo de Inserção* e *adicionar* algo no início de todas as linhas do bloco.
+- Digite `A` para fazer o mesmo, mas desta vez *acrescentar* algo no final de todas as linhas do bloco.
 
-Try it!
+Experimente!
 
 ```
-#3. Transform the following list in a HTML ordered list using C-V in combination with I and A
+#3. Transforme a seguinte lista em uma lista ordenada HTML usando C-V em combinação com I e A
 
-  start here
+  comece aqui
   /
  /
 v
-- buy flour, salt and eggs
-- mix two cups flour and some salt
-- put a handful on flour on a flat surface
-- Make sort of a volcano with the flour
-- Break 3 eggs.
-- The eggs are the lava in the volcano
-- Slowly combine flour and eggs into a dough
-- Knead the dough
-- Let it rest
+- comprar farinha, sal e ovos
+- misturar duas xícaras de farinha e um pouco de sal
+- colocar um punhado de farinha em uma superfície plana
+- Fazer uma espécie de vulcão com a farinha
+- Quebrar 3 ovos.
+- Os ovos são a lava no vulcão
+- Lentamente combinar farinha e ovos até formar uma massa
+- Sove a massa
+- Deixe descansar
 ```
 
-Cool right? Visual-block is the multi-cursor of Vim (more or less). Don't hesitate to check the solution below and compare with whatever you did.
+Legal, né? Visual-block é o multi-cursor do Vim (mais ou menos). Não hesite em verificar a solução abaixo e comparar com o que você fez.
 
-> In VSCodeVim (unlike within Vim) you can also take advantage of using I and A to prepend and append to a Visual selection when you use line-wise Visual mode. So the above also applies when using V. Try it!
+> No VSCodeVim (diferente do Vim) você também pode aproveitar o uso de I e A para adicionar antes e depois de uma seleção Visual quando usa o modo visual linha por linha. Então o acima também se aplica ao usar V. Experimente!
 
-# Solutions
+# Soluções
 
 ```
-// #2. Complete these transformations using both
-// *Normal mode* and *Visual mode*.
+// #2. Complete estas transformações usando tanto
+// *Modo Normal* quanto *Modo Visual*.
 //
-// 1. Remove "It is"
-// Normal mode: ldtb
-// Visual mode: lvtbd
-// 2. better => Better
-// Normal mode: ~
-// Visual mode: v~
-// 3. in one place, => in one place.
-// Normal mode: /,<ENTER>ncl.<ESC>
-// Visual mode: /,<ENTER>vc.<ESC>
-// 4. delete everything after that
-// Normal mode: jdd..
-// Visual mode: jVjjd
+// 1. Remover "É"
+// Modo Normal: ldtb
+// Modo Visual: lvtbd
+// 2. melhor => Melhor
+// Modo Normal: ~
+// Modo Visual: v~
+// 3. parado, => parado.
+// Modo Normal: /,<ENTER>ncl.<ESC>
+// Modo Visual: /,<ENTER>vc.<ESC>
+// 4. apague tudo depois disso
+// Modo Normal: jdd..
+// Modo Visual: jVjjd
 
- start here
+ comece aqui
   /
  /
 v
-"It is better to go forward without a goal,
-than to have a goal and stay in one place,
-and it is certainly better than to stay in one
-place without a goal.”
-    - The Tower of the Swallow (The Witcher #4)
+"É melhor seguir em frente sem um objetivo,
+do que ter um objetivo e ficar parado,
+e certamente é melhor do que ficar parado
+sem um objetivo."
+    - A Torre da Andorinha (The Witcher #4)
 ```
 
 ```
-#3. Transform the following list in a HTML ordered list using C-V in combination with I and A
+#3. Transforme a seguinte lista em uma lista ordenada HTML usando C-V em combinação com I e A
 
-  start here
+  comece aqui
   /
  /
 v C-V8jc<li><ESC>C-V8j$A</li><ESC>O<ol>o</ol>
-- buy flour, salt and eggs
-- mix two cups flour and some salt
-- put a handful on flour on a flat surface
-- Make sort of a volcano with the flour
-- Break 3 eggs.
-- The eggs are the lava in the volcano
-- Slowly combine flour and eggs into a dough
-- Knead the dough
-- Let it rest
+- comprar farinha, sal e ovos
+- misturar duas xícaras de farinha e um pouco de sal
+- colocar um punhado de farinha em uma superfície plana
+- Fazer uma espécie de vulcão com a farinha
+- Quebrar 3 ovos.
+- Os ovos são a lava no vulcão
+- Lentamente combinar farinha e ovos até formar uma massa
+- Sove a massa
+- Deixe descansar
 ```
