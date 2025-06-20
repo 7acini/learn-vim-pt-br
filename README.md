@@ -1,6 +1,9 @@
-# Learn Vim
+<div style="display: flex; align-items: center; gap: 20px;">
+  <img src="/media/icon.png" style="width: 80px; height: 80px;">
+  <h1>Learn Vim</h1>
+</div>
 
-**Este projeto é um fork da extensão original "Learn Vim" do VS Code, que foi originalmente desenvolvida em inglês.**
+>**Este projeto é um fork da extensão original "Learn Vim" do VS Code, que foi originalmente desenvolvida em inglês pelo [Vintharas](https://github.com/vintharas).**
 
 Aprenda Vim diretamente dentro do VS Code. Use esta extensão para aprender e praticar suas habilidades no Vim e se tornar um desenvolvedor ainda mais incrível.
 
