@@ -1,7 +1,6 @@
-<div style="display: flex; align-items: center; gap: 20px;">
-  <img src="/media/icon.png" style="width: 80px; height: 80px;">
-  <h1>Learn Vim</h1>
-</div>
+<img src="media/icon.png" width="80" height="80" align="left">
+
+# Learn Vim
 
 >**Este projeto é um fork da extensão original "Learn Vim" do VS Code, que foi originalmente desenvolvida em inglês pelo [Vintharas](https://github.com/vintharas).**
 
