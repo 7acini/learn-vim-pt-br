@@ -1,5 +1,5 @@
-# Introduction!
+# Introdução!
 
-Here you learn about Vim and you pumped up for what's to come:
+Aqui você aprenderá sobre o Vim e ficará empolgado com o que está por vir:
 
-> Vim is for programmers who want to raise their game. In the hands of an expert, Vim shreds text at the speed of thought.
+> O Vim é para programadores que querem elevar seu nível. Nas mãos de um especialista, o Vim destrói texto na velocidade do pensamento.

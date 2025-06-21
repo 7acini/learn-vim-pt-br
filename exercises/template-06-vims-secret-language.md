@@ -1,21 +1,21 @@
-# Vim's Secret Language
+# A Linguagem Secreta do VIM
 
-This is a chapter for reflecting, consolidating your knowledge and appreciating how far you've come.
+Este é um capítulo para refletir, consolidar seu conhecimento e apreciar o quão longe você chegou.
 
-Write down all the operators, motions and commands that you've learned thus far. Don't take a look at the cheatsheet or any other reference. Just write down the ones that you can remember from the top of your head.
+Anote todos os operadores, movimentos e comandos que você aprendeu até agora. Não consulte a folha de dicas ou qualquer outra referência. Apenas escreva os que você consegue lembrar de cabeça.
 
-> Remember that you can use mnemonics to recall the commands based on what they do. Vim is really great at that.
+> Lembre-se que você pode usar mnemônicos para recordar os comandos com base no que eles fazem. O VIM é realmente excelente nisso.
 
 ```
-Command - what does it do?
+Comando - o que ele faz?
 =============================
-j - move cursor down
+j - move o cursor para baixo
 
 ```
 
-When you're done write down the number of commands that you've learned and take a moment to celebrate how much you've learned! Wihoo! If you feel like it, share it with me on [twitter](https://twitter.com/Vintharas) and I'll give you a massive kudos. :D
+Quando terminar, anote o número de comandos que você aprendeu e reserve um momento para celebrar o quanto você já sabe! Uhul! Se quiser, compartilhe comigo no [twitter](https://twitter.com/Vintharas) e eu te darem um enorme parabéns. :D
 
-Now dance!!
+Agora dance!!
 
 ```
 ♪┏(・o･)┛♪┗ ( ･o･) ┓♪

@@ -1,15 +1,15 @@
-# Installing Vim in VSCode
+# Instalando o Vim no VSCode
 
-If you haven't installed VSCodeVim now is the time to do it.
+Se você ainda não instalou o VSCodeVim, agora é a hora.
 
-- Open command palette with `CMD-SHIFT-P` on Mac `CTRL-SHIFT-P` on Windows/Linux.
-- Type `Extension`
-- Select `Extensions: Install Extension`
-- Type `vim`
-- Install the first extension that pops up (vscodevim).
+- Abra a paleta de comandos com `CMD-SHIFT-P` no Mac ou `CTRL-SHIFT-P` no Windows/Linux.
+- Digite `Extension`
+- Selecione `Extensions: Install Extension`
+- Digite `vim`
+- Instale a primeira extensão que aparecer (vscodevim).
 
-When you've done that come back to this editor. Your cursor should no longer be a | but a rectangle.
+Depois de fazer isso, volte para este editor. Seu cursor não deve mais ser um |, mas sim um retângulo.
 
 :O
 
-Now let's take it for a quick ride. Jump to the next chapter.
+Agora vamos testá-lo rapidamente. Pule para o próximo capítulo.

@@ -1,142 +1,141 @@
-# Moving Blazingly Fast with Vim Motions
+# Movendo-se Extremamente Rápido com Movimentos do Vim
 
-To do things in Vim you use **commands**. Commands are actions that have an effect in your editor. There's lots of different commands that do different things. **Motions** are commands that you use to move around in **Normal mode** (you'll soon learn that they are capable of a lot more).
+No Vim, você realiza ações usando **comandos**. Comandos são ações que têm efeito no seu editor. Existem muitos comandos diferentes para diversas finalidades. **Movimentos** são comandos usados para navegar no **modo normal** (você logo descobrirá que eles são capazes de muito mais).
 
-It's time to practice some basic motions to move blazingly fast around your editor. Wiho!
+É hora de praticar alguns movimentos básicos para navegar rapidamente pelo seu editor. Vamos lá!
 
-> Remember that you can navigate this file using hjkl:
->
+> Lembre-se que você pode navegar neste arquivo usando hjkl:
 > ```
 >            ↑
 >      ← h j k l →
 >          ↓
 > ```
 
-## Moving Horizontally Word By Word
+## Movimento Horizontal Palavra por Palavra
 
-Let's start with two great motions to move horizontally:
+Vamos começar com dois excelentes movimentos horizontais:
 
-- `w` to move word by word
-- `b` to move backwards word by word
+- `w` para avançar palavra por palavra
+- `b` para retroceder palavra por palavra
 
-Using `w` and `b` go to the end of the following sentence and back.
+Use `w` e `b` para ir até o final da seguinte frase e voltar.
 
 ```
- start here
+ comece aqui
   /
  /
 v
 Hither came Conan, the Cimmerian, black-haired, sullen-eyed, sword in hand, a thief, a reaver, a slayer, with gigantic melancholies and gigantic mirth, to tread the jeweled thrones of the Earth under his sandaled feet.
 ```
 
-Did you notice something interesting when moving word by word? What happened with `Conan,` and `Cimmerian,`? How did Vim treat those pesky `,`? Did you expect `,` to be part of a different word? No? Would you have enjoyed being able to jump through the whole length of `Cimmerian,` in one single jump?
+Notou algo interessante ao mover palavra por palavra? O que aconteceu com `Conan,` e `Cimmerian,`? Como o Vim tratou essas vírgulas? Você esperava que `,` fosse parte de uma palavra diferente? Não? Gostaria de poder pular toda a extensão de `Cimmerian,` em um único salto?
 
-You can do that! Vim distinguishes between **words** and **WORDS**. A **word** in Vim is either a sequence of letters, digits and numbers, OR a sequence of other non-blank characters.
+Você pode! O Vim distingue entre **palavras** e **PALAVRAS**. Uma **palavra** no Vim é uma sequência de letras, dígitos e números, OU uma sequência de outros caracteres não-brancos.
 
-These are all words. See how `w` and `b` behave when you navigate them:
+Estas são todas palavras. Observe como `w` e `b` se comportam ao navegá-las:
 
 ```
-these are 4 words
-and these below too
+estas são 4 palavras
+e estas abaixo também
 ,,, ..... ((((( ,.(
 ```
 
-Vim also has the concept of special kinds of words (with letters, digits and numbers) that also include special characters like ., (, {, etc. They are called **WORDs** in Vim jargon. `Cimmerian,` and `Conan,` are two **words** and only one **WORD**. And just like you can move word by word using `w` and `b`, you can use the uppercase version to move **WORD** by **WORD**. Try it!
+O Vim também tem o conceito de tipos especiais de palavras (com letras, dígitos e números) que incluem caracteres especiais como ., (, {, etc. Elas são chamadas de **PALAVRAS** no jargão do Vim. `Cimmerian,` e `Conan,` são duas **palavras** mas apenas uma **PALAVRA**. E assim como você pode mover palavra por palavra usando `w` e `b`, você pode usar as versões maiúsculas para mover **PALAVRA** por **PALAVRA**. Experimente!
 
-- `W` to move word by WORD
-- `B` to move backwards WORD by WORD
+- `W` para avançar PALAVRA por PALAVRA
+- `B` para retroceder PALAVRA por PALAVRA
 
 ```
- start here
+ comece aqui
   /
  /
 v
 Hither came Conan, the Cimmerian, black-haired, sullen-eyed, sword in hand...
 ```
 
-_Did you notice the difference?_
+_Percebeu a diferença?_
 
-WORDs are particularly helpful to us programmers because code often has a lot of them:
+PALAVRAS são particularmente úteis para nós programadores porque código frequentemente contém muitas delas:
 
 ```
-this is a WORD: Iam_A_WORD(WORD)
-this function call sum(2,3) is also a WORD
-this array [1,2,3,4,5] is a WORD as well
+isto é uma PALAVRA: Iam_A_PALAVRA(PALAVRA)
+esta chamada de função soma(2,3) também é uma PALAVRA
+este array [1,2,3,4,5] é uma PALAVRA também
 ```
 
-Now try combining `wW` and `bB` in the next example:
+Agora tente combinar `wW` e `bB` no próximo exemplo:
 
 ```typescript
- start here
+ comece aqui
   /
  /
 v
 function helloVimWorld() {
   console.log("Hello vim world");
 }
-// So original Jaime. Your Grandma would be proud.
+// Muito original, Jaime. Sua avó ficaria orgulhosa.
 ```
 
-**In general, word motions allow for more precise changes while WORD motions allow for faster movement**:
+**Em geral, movimentos por palavra permitem mudanças mais precisas enquanto movimentos por PALAVRA permitem navegação mais rápida**:
 
 ```
-type wwww ==> v   v v   v   v
-              word. are two words
-              word. is one WORD
-type WWW  ==> ^     ^  ^   ^
+digite wwww ==> v   v v   v   v
+              palavra. são duas palavras
+              palavra. é uma PALAVRA
+digite WWW  ==> ^     ^  ^   ^
 ```
 
-Now let's try something different:
+Agora vamos tentar algo diferente:
 
-- `e` to jump to the end of a word
-- `ge` to jup to the end of the previous word
+- `e` para pular para o final de uma palavra
+- `ge` para pular para o final da palavra anterior
 
-Try it!
+Experimente!
 
 ```
- start here
+ comece aqui
   /
  /
 v
 Hither came Conan, the Cimmerian, black-haired, sullen-eyed, sword in hand, a thief, a reaver, a slayer, with gigantic melancholies and gigantic mirth, to tread the jeweled thrones of the Earth under his sandaled feet.
 ```
 
-Just like `w` and `b`, `e` and `ge` have an equivalent for WORDs:
+Assim como `w` e `b`, `e` e `ge` têm equivalentes para PALAVRAS:
 
-- `E` is like `e` but operates on WORDS
-- `gE` is like `ge` but operates on WORDS
+- `E` é como `e` mas opera em PALAVRAS
+- `gE` é como `ge` mas opera em PALAVRAS
 
 ```
- start here
+ comece aqui
   /
  /
 v
 Hither came Conan, the Cimmerian, black-haired, sullen-eyed, sword in hand...
 ```
 
-## Move to a Specific Character
+## Movendo-se para um Caractere Específico
 
-Find character motions let you move horizontally quickly and with high precision:
+Movimentos de busca por caractere permitem mover-se horizontalmente com rapidez e precisão:
 
-- Use `f{character}` (find) to move to the next occurrence of a character in a line.
-- Use `F{character}` to find the previous occurrence of a character
+- Use `f{caractere}` (find) para mover para a próxima ocorrência de um caractere na linha.
+- Use `F{caractere}` para encontrar a ocorrência anterior de um caractere
 
-For instance, `f(` sends you to the next occurrence of `(`. Try it!
+Por exemplo, `f(` leva você para a próxima ocorrência de `(`. Experimente!
 
 ```typescript
- start here
+ comece aqui
   /
  /
 v
 function helloVimWorld() {
                       |
-                      v now try going back with F(
+                      v agora tente voltar com F(
   console.log("Hello vim world");
 }
-// So original Jaime. Your Grandma would be proud.
+// Muito original Jaime. Sua avó ficaria orgulhosa.
 ```
 
-Jump around using `f{character}` and `F{character}` and collect all the letters in the circuit below:
+Navegue usando `f{caractere}` e `F{caractere}` e colete todas as letras no circuito abaixo:
 
 ```
 -----------------f-------------------
@@ -148,28 +147,28 @@ Jump around using `f{character}` and `F{character}` and collect all the letters 
 ----)--------------------------------
 ```
 
-You can clearly see how `f` is faster and more precise than using word motions by pitching one against the other in an example:
+Você pode claramente ver como `f` é mais rápido e preciso do que movimentos por palavra comparando-os neste exemplo:
 
 ```
-type f(   ==> v                        v
+digite f(   ==> v                        v
               const fireball = function(target){
-type wwww ==> ^     ^        ^ ^       ^
+digite wwww ==> ^     ^        ^ ^       ^
 ```
 
-In addition to `f` Vim also offers the `t` (until) command:
+Além de `f`, o Vim também oferece o comando `t` (until):
 
-- Use `t{character}` to move the cursor just before the next occurrence of a character (think of `t{character}` of moving your cursor until that character).
-- Again, you can use `T{character}` to do the same as `t{character}` but backwards
+- Use `t{caractere}` para mover o cursor logo antes da próxima ocorrência de um caractere (pense em `t{caractere}` como movendo seu cursor até aquele caractere).
+- Novamente, você pode usar `T{caractere}` para fazer o mesmo que `t{caractere}` mas para trás
 
-If the different between the f and t commands isn’t quite clear yet, here’s an example that compares both of them:
+Se a diferença entre os comandos f e t ainda não está clara, aqui está um exemplo que compara ambos:
 
 ```
-type t(   ==> v                       v
+digite t(   ==> v                       v
               const fireball = function(target){
-type f(   ==> ^                        ^
+digite f(   ==> ^                        ^
 ```
 
-Try to collect all the `$` in this other circuit. We shall be so rich!!!
+Tente coletar todos os `$` neste outro circuito. Ficaremos tão ricos!!!
 
 ```
 ----------------$f-------------------
@@ -181,187 +180,187 @@ Try to collect all the `$` in this other circuit. We shall be so rich!!!
 ----)$--------------------------------
 ```
 
-After using `f{character}` you can type `;` to go to the next occurrence of the character or `,` to go to the previous one. You can see the `;` and `,` as commands for repeating the last character search.
+Depois de usar `f{caractere}` você pode digitar `;` para ir para a próxima ocorrência do caractere ou `,` para ir para a anterior. Você pode ver `;` e `,` como comandos para repetir a última busca por caractere.
 
-This is nice because it saves you from typing the same search over and over again. Try it yourself:
+Isso é legal porque evita que você digite a mesma busca repetidamente. Experimente você mesmo:
 
 ```
-type fdfdfd ==> v   v               v        v
+digite fdfdfd ==> v   v               v        v
                 let damage = weapon.damage * d20();
                 let damage = weapon.damage * d20();
-type fd;;   ==> v   v               v        v
+digite fd;;   ==> v   v               v        v
 ```
 
-## Moving Horizontally Extremely
+## Movimento Horizontal Extremo
 
-- `0`: Moves to the first character of a line
-- `^`: Moves to the first non-blank character of a line
-- `$`: Moves to the end of a line
-- `g_`: Moves to the non-blank character at the end of a line
+- `0`: Move para o primeiro caractere de uma linha
+- `^`: Move para o primeiro caractere não-branco de uma linha
+- `$`: Move para o final de uma linha
+- `g_`: Move para o último caractere não-branco de uma linha
 
-Experiment below. Try to get to all extremes in the piece of code below:
+Experimente abaixo. Tente chegar a todos os extremos no trecho de código abaixo:
 
 ```typescript
- start here
+ comece aqui
   /
  /
-v                // I've added some extra whitespace at the end
+v                // Adicionei alguns espaços extras no final
 function helloVimWorld() {
   console.log("Hello vim world");
 }
-// So original Jaime. Your Grandma would be proud.
+// Muito original Jaime. Sua avó ficaria orgulhosa.
 ```
 
-## Moving Vertically
+## Movimento Vertical
 
-Starting from `k` and `j`, we move on to a faster way of maneuvering vertically with:
+Começando com `k` e `j`, passamos para uma forma mais rápida de manobrar verticalmente com:
 
-- `}` jumps entire paragraphs downwards
-- `{` similarly but upwards
-- `CTRL-D` lets you move down half a page by scrolling the page
-- `CTRL-U` lets you move up half a page also by scrolling
+- `}` salta parágrafos inteiros para baixo
+- `{` similarmente mas para cima
+- `CTRL-D` permite mover metade da página para baixo rolando a página
+- `CTRL-U` permite mover metade da página para cima também rolando
 
-Go up and down this file using `{` and `}` first. Then compare it with using `CTRL-D` and `CTRL-U`. Use the `STOP` below as a bookmark :D.
+Suba e desce neste arquivo usando `{` e `}` primeiro. Depois compare com usar `CTRL-D` e `CTRL-U`. Use o `PARE` abaixo como marcador :D.
 
 ```
 ----------------------------
 -----------   --------------
----------  STOP  -----------
+---------  PARE  -----------
 ----------     -------------
 ----------------------------
              |
              |
-             v continue here
+             v continue aqui
 ```
 
-## High Precision Vertical Motions With Search Pattern
+## Movimentos Verticais de Alta Precisão com Padrão de Busca
 
-To move anywhere within a file when you haver a target in mind, the best option is to search using:
+Para mover para qualquer lugar em um arquivo quando você tem um alvo em mente, a melhor opção é buscar usando:
 
-- `/{pattern}` to search forward
-- `?{pattern}` to search backwards
+- `/{padrão}` para buscar para frente
+- `?{padrão}` para buscar para trás
 
-Let's take searching for a spin. I've taken to farming lately but I'm not very good at it. The field below has a bunch of weeds and one lonely cucumber. Try using search to get your cursor exactly on that cucumber. (And remember that in order to execute a search you need to press `ENTER` at the end of the command)
-
-```
---------------------------
----v----------------v-----
------------v---cucumber---
------v-----------v--------
---------------------------
-```
-
-> In order to get search highlighted. You may need to update to vscode vim configuration. Open your user settings and make sure that the vim.hlsearch option is enabled. Now when you search the matching text is highlighted in the editor.
-
-Awesome! `/cucumber` brought you exactly where you needed to go. You need not type the whole word though, you'll find that most often 2 or 3 characters are enough. Try `/cuc`:
+Vamos testar a busca. Tenho me dedicado à agricultura ultimamente mas não sou muito bom nisso. O campo abaixo tem um monte de ervas daninhas e um solitário pepino. Tente usar busca para posicionar seu cursor exatamente no pepino. (E lembre-se que para executar uma busca você precisa pressionar `ENTER` no final do comando)
 
 ```
 --------------------------
 ---v----------------v-----
------------v---cucumber---
+-----------v---pepino---
 -----v-----------v--------
 --------------------------
 ```
 
-Much faster right? If there's multiple matches of the same pattern you can quickly jump between them using:
+> Para obter realce da busca. Você pode precisar atualizar a configuração do vscode vim. Abra suas configurações de usuário e certifique-se que a opção vim.hlsearch está habilitada. Agora quando você busca o texto correspondente é destacado no editor.
 
-- `n` to go to the next match
-- `N` to go to the previous match
-
-Type `n` and you jump to the next occurrence of `cuc` (Vim keeps your last search active)
+Incrível! `/pepino` te levou exatamente onde você precisava ir. Você não precisa digitar a palavra inteira, frequentemente 2 ou 3 caracteres são suficientes. Tente `/pep`:
 
 ```
 --------------------------
----v--cucumber------v-----
------------v---cucumber---
+---v----------------v-----
+-----------v---pepino---
 -----v-----------v--------
-cucumber------------------
+--------------------------
 ```
 
-Now type `N` to go barwards to the top of the field, then `n` forwards until this shiny `cucumber`.
+Muito mais rápido, certo? Se houver múltiplas ocorrências do mesmo padrão você pode pular rapidamente entre elas usando:
 
-You can use `?{pattern}` to search upwards. Using `?` without a pattern changes the direction of the current search. When changing the direction `n` and `N` also change direction.
+- `n` para ir para a próxima ocorrência
+- `N` para ir para a ocorrência anterior
 
-Try typing `?` and press `ENTER`. And then come back to this magic `cucumber`.
-
-The `{pattern}` in `/{pattern}` doesn't have to be a string literal. It is a regular expression. Oh the mighty power of regular expressions!
-
-Try using the following search command to find second level headings in this document. Notice how when you get to the end it will start back at the top. Go through the whole document until you find the next title.
-
-- Type `/## .*`
-
-## Moving Faster With Counts
-
-Counts are numbers which let you multiply the effect of a command:
+Digite `n` e você pula para a próxima ocorrência de `pep` (o Vim mantém sua última busca ativa)
 
 ```
-{count}{command}
+--------------------------
+---v--pepino------v-----
+-----------v---pepino---
+-----v-----------v--------
+pepino------------------
 ```
 
-Try them yourself! Type `2w` to move two words ahead:
+Agora digite `N` para voltar para o topo do campo, depois `n` para frente até este brilhante `pepino`.
+
+Você pode usar `?{padrão}` para buscar para cima. Usar `?` sem um padrão inverte a direção da busca atual. Ao inverter a direção `n` e `N` também invertem.
+
+Tente digitar `?` e pressionar `ENTER`. E então volte para este mágico `pepino`.
+
+O `{padrão}` em `/{padrão}` não precisa ser uma string literal. É uma expressão regular. Oh o poder supremo das expressões regulares!
+
+Tente usar o seguinte comando de busca para encontrar títulos de segundo nível neste documento. Observe como quando você chega ao final ele volta para o topo. Passe por todo o documento até encontrar o próximo título.
+
+- Digite `/## .*`
+
+## Movendo-se Mais Rápido com Contagens
+
+Contagens são números que permitem multiplicar o efeito de um comando:
 
 ```
-type wwww ==> v   v v   v   v
-              word. are two words
-              word. are two words
-type 3w2w ==>       ^       ^
+{contagem}{comando}
 ```
 
-Try `5j` to jump file lines below`:
+Experimente você mesmo! Digite `2w` para avançar duas palavras:
+
+```
+digite wwww ==> v   v v   v   v
+              palavra. são duas palavras
+              palavra. são duas palavras
+digite 3w2w ==>       ^       ^
+```
+
+Tente `5j` para pular 5 linhas abaixo`:
 
 -x
-0| <-- landing site
+0| <-- local de pouso
 -x
 
-Try finding an array within an array:
+Tente encontrar um array dentro de outro array:
 
 ```
-type f[;;  ==> vv    v
+digite f[;;  ==> vv    v
                [[1], [1, 2], [3]]
                [[1], [1, 2], [3]]
-type 3f[  ==>        ^
+digite 3f[  ==>        ^
 ```
 
-Try jumping to the second cucumber with `2/cuc`:
+Tente pular para o segundo pepino com `2/pep`:
 
 ```
 --------------------------
----v--cucumber------v-----
------------v---cucumber---
+---v--pepino------v-----
+-----------v---pepino---
 -----v-----------v--------
-cucumber------------------
+pepino------------------
 ```
 
-Cool, right?
+Legal, né?
 
-A faster way to move around up is to combine counts with `j` and `k`. You can enable relative line numbers to get an idea of how many lines you need to jump up, or down (You can find it in user settings under _line numbers_).
+Uma forma mais rápida de se mover é combinar contagens com `j` e `k`. Você pode habilitar números de linha relativos para ter uma ideia de quantas linhas precisa pular para cima ou para baixo (Você pode encontrar nas configurações de usuário em _line numbers_).
 
-## Moving Semantically
+## Movimento Semântico
 
-In addition to the previous motions which don’t really take into account the meaning of your code, Vim offers additional bindings that take your code semantics into consideration:
+Além dos movimentos anteriores que não levam em conta o significado do seu código, o Vim oferece atalhos adicionais que consideram a semântica do código:
 
-- Use `gd` to **g**o to **d**efinition of whatever is under your cursor.
-- Use `gf` to **g**o to a **f**ile in an import.
+- Use `gd` para ir para a **d**efinição do que estiver sob seu cursor.
+- Use `gf` para ir para um **a**rquivo em uma importação.
 
-## And Some More Nifty Core Motions
+## E Mais Alguns Movimentos Úteis
 
-These are yet more motions that can come in handy from time to time:
+Estes são mais alguns movimentos que podem ser úteis de vez em quando:
 
-- Type `gg` to go to the top of the file.
-- Use `{line}gg` to go to a specific line.
-- Use `G` to go to the end of the file.
-- Type `%` jump to matching `({[]})`.
+- Digite `gg` para ir para o topo do arquivo.
+- Use `{linha}gg` para ir para uma linha específica.
+- Use `G` para ir para o final do arquivo.
+- Digite `%` para pular para o correspondente `({[]})`.
 
-Try going back to the top of this file with `gg`, then come back with `G`.
+Tente voltar para o topo deste arquivo com `gg`, depois volte com `G`.
 
-And now jump between these two matching brackets until you want to go to sleep:
+E agora pule entre estes dois colchetes correspondentes até você querer dormir:
 
 ```typescript
-             start here f[%
+             comece aqui f[%
                  \
                   \
                    v
-const bagOfFoods = [["cucumber"], ["tomato", "potato"]];
+const bagOfFoods = [["pepino"], ["tomate", "batata"]];
 ```
 
-And that's all! Pat yourself on the back. You just grokked Vim motions.
+E é isso! Dê um tapinha nas suas próprias costas. Você acabou de dominar os movimentos do Vim.

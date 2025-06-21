@@ -1,16 +1,16 @@
-# Baby Steps in Vim
+# Primeiros Passos no Vim
 
-Oh no!? If you try to type stuff with the curious looking rectangle shaped cursor nothing happens!? Or strange things happen ?!!?
+Oh não!? Se você tentar digitar algo com esse cursor retangular estranho, nada acontece!? Ou coisas estranhas acontecem?!!?
 
 щ（ﾟ Д ﾟ щ）
 
-Ok. Take a deep breath. I haven't broken your editor. Yet.
+Ok. Respire fundo. Eu não quebrei seu editor. Ainda.
 
-Vim is quite a strange editor. It has modes. A mode for navigating/editing, a mode for inserting text, a mode for selecting text. This is good. It gives Vim the ability to really take advantage of that keyboard of yours because it can concentrate in just one single task at a time.
+O Vim é um editor bem peculiar. Ele tem modos: um modo para navegar/editar, um modo para inserir texto e um modo para selecionar texto. Isso é bom! Dá ao Vim a capacidade de aproveitar ao máximo seu teclado, pois ele se concentra em apenas uma tarefa por vez.
 
-The mode that is active right now (with the rectangular shaped cursor) is **normal mode**. In that mode, Vim focus solely on navigating super fast around the code and editing, two of the most common things you do when you code.
+O modo ativo agora (com o cursor retangular) é o **modo normal**. Nele, o Vim foca exclusivamente em navegar rapidamente pelo código e editar — duas das coisas mais comuns ao programar.
 
-Let's start practicing the basics of movement in normal mode: `hjkl`. `hjkl` allow you to move the cursor one space in every direction.
+Vamos começar praticando o básico do movimento no modo normal: `hjkl`. Essas teclas permitem mover o cursor em todas as direções, um espaço por vez.
 
 ```
            ↑
@@ -18,23 +18,23 @@ Let's start practicing the basics of movement in normal mode: `hjkl`. `hjkl` all
          ↓
 ```
 
-If it sounds weird, think that you're in a game. Descending The Dungeons of Infinity in search for treasure...
+Se parece estranho, imagine que está em um jogo. Descendo nas *Masmasmorras do Infinito* em busca de tesouros...
 
 ````
   ________________________________________
-/ Practice the mysterious arts of vimness  \
-\ and collect the treasure.                /
+/ Domine as artes misteriosas do Vim      \
+\ e colete o tesouro.                     /
   ----------------------------------------
          \   ^__^
-          \  (oo)   For bigger challenge,
-             *()*   don't look at the keyboard.
-            (____)```
+          \  (oo)   Para um desafio maior,
+             *()*   não olhe para o teclado.
+            (____)
 
- start here
+ comece aqui
   /
  /
-@  practice using hjkl.
-   Ah! And you can't move through walls.
+@  pratique usando hjkl.
+   Ah! E você não pode atravessar paredes.
    ======================================|
 |  |#|               |##|          |   |#|
 |  |#| ------------- |##|  |-----  |     |
@@ -55,10 +55,10 @@ If it sounds weird, think that you're in a game. Descending The Dungeons of Infi
 |                                        |
 |-=======================--$---==========#
                         |$$$$$|
-                       treasure
+                       tesouro
 ````
 
-Yeah! Congrats! You're now rich and can settle in a beautiful ascii palace!
+Eba! Parabéns! Agora você está rico e pode morar em um lindo palácio ASCII!
 
 ```
                                    |>>>
@@ -79,20 +79,20 @@ Yeah! Congrats! You're now rich and can settle in a beautiful ascii palace!
            ~---__ ,--~'                  ~~----_____-~'
 ```
 
-Now that we've learned the most basic of movements let's take a look at how you can make your editor behave like you are used to: **Insert mode**. **Insert mode** is where Vim focuses in inserting bits of text and code, just like a normal editor.
+Agora que aprendemos os movimentos mais básicos, vamos ver como fazer seu editor se comportar como você está acostumado: o **modo de inserção**. Nele, o Vim foca em inserir texto e código, como um editor comum.
 
-- Type `i` to get into **Insert mode**.
-- Type `<ESC>`, `<CTRL-[>` or `<CTRL-C>` to get back to **Normal mode**.
+- Pressione `i` para entrar no **modo de inserção**.
+- Pressione `<ESC>`, `<CTRL-[>` ou `<CTRL-C>` para voltar ao **modo normal**.
 
-Complete these sentences. Practice using `i` to get into **Insert mode** and `<ESC>` (or any of the others) to get into **Normal mode**.
+Complete estas frases. Pratique usando `i` para entrar no **modo de inserção** e `<ESC>` (ou as outras opções) para voltar ao **modo normal**.
 
 ```
-I want to learn Vim because...
-My favorite food is...
-I'd die for a...
-If I went to a desserted island I'd bring a...
+Quero aprender Vim porque...
+Minha comida favorita é...
+Eu morreria por um...
+Se eu fosse para uma ilha deserta, levaria um...
 ```
 
-Awesome! Great job!
+Incrível! Ótimo trabalho!
 
-> A great tip to improve your keyboard and Vim skills is to map your CAPSLOCK to both ESC and CTRL. ESC when pressed on its own, and CTRL when pressed in combination with any other key. This is super nice because the caps lock key is in your home row, very near the natural resting position of your hands. In Mac you can achieve that using Karabiner and there's many mechanicals keyboard that let you configure it as well like the Ultimate Hacking Keyboard.
+> Uma dica valiosa para melhorar suas habilidades no teclado e no Vim é mapear sua tecla **CAPSLOCK** para **ESC** e **CTRL** ao mesmo tempo: **ESC** quando pressionada sozinha e **CTRL** quando combinada com outras teclas. Isso é ótimo porque a tecla CAPSLOCK fica na *home row*, perto da posição natural das suas mãos. No Mac, você pode fazer isso com o **Karabiner**, e muitos teclados mecânicos (como o *Ultimate Hacking Keyboard*) permitem essa configuração.
