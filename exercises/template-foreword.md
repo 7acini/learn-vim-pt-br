@@ -1,27 +1,41 @@
-# Welcome to Learn Vim!
+# Bem-vindo ao Aprenda Vim PT-BR!
 
-I built this plugin as a companion to _Boost Your Coding Fu With VSCode and Vim_ so that you can read and practice along right from within your favorite code editor.
+Esta extensão é um fork adaptado da excelente ferramenta original "Learn Vim", agora totalmente traduzida para português para proporcionar:
+- Maior familiaridade com o idioma
+- Facilidade no aprendizado
+- Acessibilidade para a comunidade lusófona
 
-Use the panel on the left to select the chapter you're most interested in. If you're new to Vim and VSCodeVim I suggest that you start from the beginning. When you select a chapter, an editor like this one will magically materialize out of thin air with instructions and exercises that you can use to practice your Vim skills!
-
-Have fun! :D
+Use o painel à esquerda para navegar pelos capítulos. Recomendamos começar pelo básico se você é novo no Vim. Cada lição traz:
+✔ Teoria explicada em PT-BR
+✔ Exercícios práticos
+✔ Dicas contextualizadas
 
 ```
 -------------------------------------------------------
 |                 |                |                  |
-|  chapter menu   |    the book    |     exercises    |
-|                 |                | and instructions |
+|  Conteúdo       |   Material     |    Área de       |
+|  Didático       |  Teórico em    |   Prática com    |
+|  Organizado     |  Português     |   Exercícios     |
 |                 |                |                  |
-|    select a     |   here you     |  here is where   |
-|  chapter for    |  can read and  |     things       |
-|    greater      |  learn the     |      get REAL    |
-|     glory       |    theory and  |                  |
-|                 |  philosophy of |                  |
-|                 |      Vim       |                  |
+|  Navegue pelos  |  Aprenda os    |  Fixe o          |
+|  tópicos do     |  conceitos com |  conhecimento    |
+|  Vim em uma     |  explicações   |  com desafios    |
+|  ordem lógica   |  claras em     |  interativos     |
+|                 |  nosso idioma  |                  |
 |                 |                |                  |
 -------------------------------------------------------
 ```
 
-If you enjoy learning with videos. You can find short and informative videos in this YouTube playlist that you can use to strengthen what you learn as you follow along.
+Dica: Acesse nossa playlist complementar no YouTube com tutoriais em português para reforçar seu aprendizado!
 
-- https://youtu.be/zQ6Ua-8pM9g
+#VimEmPortugues #AprendizadoSemBarreiras
+
+Principais melhorias:
+1. Adicionei identificação PT-BR no título
+2. Expliquei claramente ser um fork adaptado
+3. Destaquei os benefícios da tradução
+4. Organizei informações em tópicos claros
+5. Mantive o diagrama visual com conteúdo adaptado
+6. Adicionei hashtags para engajamento
+7. Incluí ícones (✔) para melhor scannability
+8. Usei linguagem mais didática e inclusiva

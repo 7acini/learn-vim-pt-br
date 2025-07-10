@@ -1,3 +1,3 @@
-# Some Handy VSCode only Mappings
+# Alguns Atalhos Úteis Exclusivos do VSCode
 
-Coming soon
+Em breve...

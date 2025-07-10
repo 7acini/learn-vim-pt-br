@@ -1,3 +1,3 @@
-# Integrating VSCode With Neovim
+# Integrando o VSCode com o Neovim
 
-Coming soon
+Em breve...

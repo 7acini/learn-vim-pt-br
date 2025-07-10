@@ -1,3 +1,3 @@
-# Enhanced File Explorer
+# File Explorer Avançado
 
-Coming soon
+Em breve...
