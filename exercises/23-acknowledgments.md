@@ -1,3 +1,3 @@
-# Acknowledgements
+# Agradecimentos
 
-Thank you for reading! Hope you learned a lot! :)
+Obrigado por ler! Espero que você tenha aprendido muito! :)

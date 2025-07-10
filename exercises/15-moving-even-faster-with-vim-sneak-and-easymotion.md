@@ -1,3 +1,3 @@
-# Moving Even Faster With vim-sneak and easymotion
+# Movendo-se Ainda Mais Rápido com vim-sneak e easymotion
 
-Coming soon
+Em breve...

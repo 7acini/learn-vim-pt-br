@@ -1,3 +1,3 @@
-# About the Author
+# Sobre o Autor
 
-That's me :)
+Esse sou eu :)
