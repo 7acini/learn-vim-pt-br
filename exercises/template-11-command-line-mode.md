@@ -1,3 +1,3 @@
-# Command-line Mode
+# Modo de Linha de Comando
 
-Coming soon
+Em breve...
