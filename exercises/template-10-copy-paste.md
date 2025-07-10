@@ -1,39 +1,38 @@
-# Copying and Pasting
+# Copiando e Colando
 
-Let's warm up with some simple practice exercises so that you can get comfortable with copying and pasting things in Vim quickly. We'll start by focusing on the yank command or `y`.
+Vamos começar com alguns exercícios simples para que você possa se familiarizar com a cópia e colagem no Vim rapidamente. Começaremos focando no comando de yank (copiar) ou `y`.
 
-> Remember you can find the solutions by searching for /Solutions. To come back use <CTRL-O>.
+> Lembre-se que você pode encontrar as soluções pesquisando por /Solutions. Para voltar use <CTRL-O>.
 
 ```bash
-# 1. Expand your army by cloning your most deadly minions! Rule the world! Use
-# `y` in combination with the operators you've learned in previous chapters to
-# copy a deadly minion and `p` to paste it and thereby clone it for great
-# glory.
+# 1. Expanda seu exército clonando seus minions mais mortais! Domine o mundo! Use
+# `y` em combinação com os operadores que você aprendeu nos capítulos anteriores para
+# copiar um minion mortal e `p` para colá-lo e assim cloná-lo para grande glória.
 
-  start here
+  comece aqui
   /
  /
 v
 orc orc orc orc orc orc orc
 orc goblin orc orc goblin orc
-red dragon ant cockroach
-lich king
-rat giant spider rat
-earth golem
-octopus "kraken" octopus
-shark (death knight)
-zombie zombie ghoul
+dragão vermelho formiga barata
+rei lich
+rato aranha gigante rato
+golem de terra
+polvo "kraken" polvo
+tubarão (cavaleiro da morte)
+zumbi zumbi ghoul
 ```
 
-Awesome! Moahahaha! (evil-est laughter) The world shall be ours!! Moahahahaha!
+Incrível! Muahahaha! (risada mais maligna) O mundo será nosso!! Muahahahaha!
 
-Well done! Now let's practice pasting using `p` and `P`.
+Muito bem! Agora vamos praticar a colagem usando `p` e `P`.
 
 ```bash
-# 2. Surround thy enemies with hordes of orcs!!! Experiment with different
-# types of yanking and pasting.
+# 2. Cerque seus inimigos com hordas de orcs!!! Experimente diferentes
+# tipos de yank e colagem.
 
-  start here
+  comece aqui
   /
  /
 v
@@ -42,40 +41,40 @@ orc orc orc orc orc orc
 orc orc orc orc orc orc
 
       orc
-orc halfling orc <== surrounded
+orc halfling orc <== cercado
       orc
 ============| |==========
 
-(paladin)
+(paladino)
 
        ooo  ^^^^^^^^^^ooo
 
-     (wizard)
+     (mago)
 
 ^^^^^  ^^^ ^^ ^ ^ ^^^
 
-(elf archer)
+(elfo arqueiro)
 
 ```
 
-Great job! By doing these exercises you should've realized a couple of things:
+Ótimo trabalho! Ao fazer esses exercícios você deve ter percebido algumas coisas:
 
-- The behavior of `p` and `P` depends on what you've copied with the `y` command:
-  - If you copy characters (like `yaw`) when you use the paste commands you'll paste
-    these characters before or after the cursor _within the same line_.
-    **Copy characters and you'll paste character**.
-  - If you copy lines (like `yy`) when you use the paste commands you'll paste lines
-    below or above the current line. **Copy lines and you'll paste lines.**
-- You can copy or duplicate entire lines by using `yyp`
+- O comportamento de `p` e `P` depende do que você copiou com o comando `y`:
+  - Se você copiou caracteres (como `yaw`), quando usar os comandos de colar, você colará
+    esses caracteres antes ou depois do cursor _na mesma linha_.
+    **Copie caracteres e você colará caracteres**.
+  - Se você copiou linhas (como `yy`), quando usar os comandos de colar, você colará linhas
+    abaixo ou acima da linha atual. **Copie linhas e você colará linhas.**
+- Você pode copiar ou duplicar linhas inteiras usando `yyp`
 
-Now let's try the even finer details of moving the cursor with `gp` and `gP`.
+Agora vamos tentar os detalhes mais refinados de mover o cursor com `gp` e `gP`.
 
 ```bash
-# 3. Ninjas are extremely fast, stealthy and deadly. Therefore we need to
-#   surround them at once without moving the cursor from their location.
-#   Experiment with `P` and `gP` until you get it right.
+# 3. Ninjas são extremamente rápidos, furtivos e mortais. Portanto, precisamos
+#   cercá-los de uma vez sem mover o cursor de sua localização.
+#   Experimente com `P` e `gP` até acertar.
 
-  start here
+  comece aqui
   /
  /
 v
@@ -84,7 +83,7 @@ orc orc orc orc orc orc
 orc orc orc orc orc orc
 
 orc orc orc orc
-     ninja <== surrounded
+     ninja <== cercado
 orc orc orc orc
 ============| |==========
 
@@ -98,17 +97,17 @@ orc orc orc orc
 ^^^ ^^^^^^^^^^^^^^^^^ ^^
 ```
 
-Awesome right? Vim does give you a lot of control on how to copy and paste things. And there's more!
+Incrível, certo? O Vim realmente lhe dá muito controle sobre como copiar e colar coisas. E tem mais!
 
-Let's now move into cutting things. Just like `y` lets you copy stuff in Vim, `d` and `c` cut text in addition to deleting and changing it. Let's practice cutting and pasting.
+Vamos agora para recortar coisas. Assim como `y` permite copiar coisas no Vim, `d` e `c` recortam texto além de deletar e alterar. Vamos praticar recortar e colar.
 
 ```bash
-# 4. The master dwarves and gnomes of Ahknbar have discovered the secrets of
-# teleportation. Using the mysterious ways of Vim they've learned to harness
-# the `d` and `p` commands to transport anything between any two points.
-# Try it!
+# 4. Os mestres anões e gnomos de Ahknbar descobriram os segredos da
+# teleportação. Usando os caminhos misteriosos do Vim, eles aprenderam a usar
+# os comandos `d` e `p` para transportar qualquer coisa entre dois pontos.
+# Tente!
 
-  start here
+  comece aqui
   /
  /
 v
@@ -116,9 +115,9 @@ v
 ^^^ ^^^^^^^^^^^^^^^^^ ^^^^^^^^^
 ^^^                         ^^^
 ^^                           ^^
-^     (dwarf) ====>   ( )     ^
-^^^^  "dwarf" ====>   + +   ^^^
-^^    gnome ======>   " "    ^^
+^     (anão) ====>   ( )     ^
+^^^^  "anão" ====>   + +   ^^^
+^^    gnomo ======>   " "    ^^
 ^^                            ^
 ^^                            ^
 ^^^^^^  ^^^ ^^ ^ ^ ^^^^^^^^^^^^
@@ -126,17 +125,17 @@ v
 ```
 
 ```bash
-# 5. A group of daring dwarves pushing the boundaries of teleportation happen to
-# have teleported themselves into the depths of the earth. Would you be so kind
-# as to rescue them?
+# 5. Um grupo de corajosos anões empurrando os limites da teleportação acabou
+# se teleportando para as profundezas da terra. Você poderia ser gentil
+# o suficiente para resgatá-los?
 
-  start here
+  comece aqui
   /
  /
 v
 ^^^^^^  ^^^ ^^ ^ ^ ^^^^^ ^^^^^^
 ^^^ ^^^^^^^^^^^^^^^^^ ^^^^^^^^^
-^^^ dwarf dwarf dwarf dwarf  ^^
+^^^ anão anão anão anão  ^^
 ^^^^^^  ^^^ ^^ ^ ^ ^^^^^^^^^^^^
 ^^^ ^^^^^^^^^^^^^^^^^ ^^^^^^^^^
 
@@ -149,16 +148,16 @@ o        +       +
                   +
 ```
 
-Now let's try to translate some of what we've learn to the world of programming and writing actual code. A common practice when writing code and collections of things is to use an item as a template. You write the code for that item, copy, paste it and then modify it a little bit. Let's try to do that with Vim and see how much time we can save:
+Agora vamos tentar traduzir parte do que aprendemos para o mundo da programação e escrever código real. Uma prática comum ao escrever código e coleções de coisas é usar um item como modelo. Você escreve o código para esse item, copia, cola e depois modifica um pouco. Vamos tentar fazer isso com Vim e ver quanto tempo podemos economizar:
 
 ```typescript
-// 6. We're developing a new roguelike game and it's going to be awesome!! Awesome!!
-// The game is going to be a mash up of your favorite video games, fantasy and scifi,
-//  and the player will be able to choose to play with any of your favorite characters! What?!
-// Add some of your favorite characters to the character selection screen.
-// Use what you've learned so far to achieve it in the fastest way you can think of.
+// 6. Estamos desenvolvendo um novo jogo roguelike e vai ser incrível!! Incrível!!
+// O jogo será uma mistura dos seus jogos favoritos, fantasia e ficção científica,
+// e o jogador poderá escolher jogar com qualquer um dos seus personagens favoritos! O quê?!
+// Adicione alguns dos seus personagens favoritos à tela de seleção de personagens.
+// Use o que você aprendeu até agora para fazer isso da maneira mais rápida que puder.
 
-//   start here
+//   comece aqui
 //    /
 //  /
 // v
@@ -169,13 +168,13 @@ const characters = [
 characterSelectionScreen.add(characters);
 ```
 
-Sometimes we'll make a typo and switch two letters:
+Às vezes cometemos um erro de digitação e trocamos duas letras:
 
 ```typescript
-// 7. Correct these typos human! Tip: can you do this with the `x` and `p` commands
-//    Refresher: `x` is equivalent to `dl`
+// 7. Corrija esses erros de digitação, humano! Dica: você pode fazer isso com os comandos `x` e `p`
+//    Lembrete: `x` é equivalente a `dl`
 
-//   start here
+//   comece aqui
 //    /
 //  /
 // v
@@ -186,15 +185,15 @@ conts charactres = [
 characterSelectionScreen.add(characters);
 ```
 
-And sometimes we want to move things around:
+E às vezes queremos mover coisas:
 
 ```typescript
-// 8. Strange... someone put the class members below the constructor. Ain't that quaint...
-//    Let's move them back up before the constructor. Like it always should have been...
-//    Tip: Can you combine the `d` command with a motion to cut all members with a single command?
+// 8. Estranho... alguém colocou os membros da classe abaixo do construtor. Não é peculiar...
+//    Vamos movê-los de volta para antes do construtor. Como sempre deveria ter sido...
+//    Dica: Você pode combinar o comando `d` com um movimento para recortar todos os membros com um único comando?
 
 
-//   start here
+//   comece aqui
 //    /
 //  /
 // v
@@ -209,37 +208,37 @@ class Character {
   readonly class;
   readonly race;
 
-  // Other code...
+  // Outro código...
 }
 ```
 
-Excellent! Congratulations! You've learned the foundations of copying and pasting in Vim! Wihooo! With all that you've learned thus far you're pretty much good to go and have an stellar experience copying and pasting things in VSCode with great speed and accuracy.
+Excelente! Parabéns! Você aprendeu os fundamentos de copiar e colar no Vim! Wihooo! Com tudo o que você aprendeu até agora, você está pronto para ter uma experiência estelar copiando e colando coisas no VSCode com grande velocidade e precisão.
 
-There is still more in store for you. **Vim Registers** and **pasting in Insert mode**. Both of which you'll use less often than `y` and `p` but they can be really useful when the time calls.
+Ainda há mais por vir. **Registradores do Vim** e **colagem no modo Insert**. Ambos você usará com menos frequência que `y` e `p`, mas podem ser realmente úteis quando necessário.
 
-## Vim Registers
+## Registradores do Vim
 
-**Vim Registers** are a very interesting feature in Vim that enhances the way you work with copying and pasting (among other things). In essence, they are like having a multitude of clipboards where you can copy or cut things. There's a bunch of registers identified by a character and which perform slightly different tasks:
+**Registradores do Vim** são um recurso muito interessante no Vim que melhora a forma como você trabalha com cópia e colagem (entre outras coisas). Essencialmente, eles são como ter múltiplas áreas de transferência onde você pode copiar ou recortar coisas. Há vários registradores identificados por um caractere que realizam tarefas ligeiramente diferentes:
 
-- The **unnamed register** `"` is where you copy and cut stuff to, when you don’t explicitly specify a register. The default register if you will.
-- The **named registers** `a-z` are registers you can use explicitly to copy and cut text at will
-- The **yank register** `0` stores the last thing you have yanked (copied)
-- The **cut registers** `1-9` store the last 9 things you cut by using either the delete or the change command
+- O **registrador não nomeado** `"` é onde você copia e recorta coisas quando não especifica explicitamente um registrador. O registrador padrão, por assim dizer.
+- Os **registradores nomeados** `a-z` são registradores que você pode usar explicitamente para copiar e recortar texto à vontade
+- O **registrador yank** `0` armazena a última coisa que você yankou (copiou)
+- Os **registradores de recorte** `1-9` armazenam as últimas 9 coisas que você recortou usando os comandos delete ou change
 
-> The yank register (`0`) and the cut registers (`1-9`) are officially called **numbered registers**. But I think it is more useful to name them yank and cut registers. That way, remembering what they do becomes far easier.
+> O registrador yank (`0`) e os registradores de recorte (`1-9`) são oficialmente chamados de **registradores numerados**. Mas acho mais útil chamá-los de registradores yank e de recorte. Dessa forma, lembrar o que eles fazem fica muito mais fácil.
 
-For instance, `"ayas` yanks a sentence and stores it in register `a`. Now if you want to paste it somewhere else, you can type `"ap`. Alternatively, using the capitalized version a register (i.e. `A` instead of `a`) appends whatever you copy or cut into that register.
+Por exemplo, `"ayas` copia uma sentença e a armazena no registrador `a`. Agora, se você quiser colá-la em outro lugar, pode digitar `"ap`. Alternativamente, usar a versão em maiúsculas de um registrador (ou seja, `A` em vez de `a`) anexa o que você copiar ou recortar nesse registrador.
 
-Let's practice using the _named registers_ (`a-z`)!
+Vamos praticar usando os _registradores nomeados_ (`a-z`)!
 
 ```bash
-# 9. We're preparing an assault in the human city of Gonlor, pride of The First Humans.
-#    We've enlisted our bravest and fiercest warriors from the sacred lands of Wordor who
-#    have pledged to drive the human blight away of these sacred grounds.
-#    Create a balanced battle formation by alternating globins and orcs.
-#    Tip: Think about how you can use registers to achieve this task
+# 9. Estamos preparando um ataque à cidade humana de Gonlor, orgulho dos Primeiros Humanos.
+#    Recrutamos nossos guerreiros mais corajosos e ferozes das terras sagradas de Wordor que
+#    juraram expulsar a praga humana desses terrenos sagrados.
+#    Crie uma formação de batalha equilibrada alternando globins e orcs.
+#    Dica: Pense em como você pode usar registradores para realizar esta tarefa
 
-  start here
+  comece aqui
   /
  /
 v
@@ -255,24 +254,24 @@ orc goblin orc orc orc orc
 o .      .      x .   +
 
    .   ooo  ^^^^^^^ ^ ooo
-soldier solider soldier soldier
-     soldier soldier soldier
-  +    archer archer archer
-       wizard archer archer
+soldado soldado soldado soldado
+     soldado soldado soldado
+  +    arqueiro arqueiro arqueiro
+       mago arqueiro arqueiro
 
 ^^^^^^  ^^^ ^^ ^ ^ ^^^^^| |^^
 ^^^ ^^^^^^^^^^^^^^^^^ ^^| |^^
 ```
 
-The **yank register** lets you have access to what you copied last via the `y` command. This is helpful because deletes and changes don’t overwrite this register like they do the unnamed register. This is easier to illustrate with an example:
+O **registrador yank** permite que você acesse o que copiou por último via comando `y`. Isso é útil porque deletes e changes não sobrescrevem esse registrador como fazem com o registrador não nomeado. Isso é mais fácil de ilustrar com um exemplo:
 
 ```typescript
-// 9. There's been a mixup in the battle plans and our goblin formation is made of orcs,
-//    and our orcs formation is made out of goblins. We need to fix this mixup and also
-//    make sure we send the goblins to battle first.
-//    Tip: Try using y and p and see what happens
+// 9. Houve uma confusão nos planos de batalha e nossa formação de goblins é feita de orcs,
+//    e nossa formação de orcs é feita de goblins. Precisamos corrigir essa confusão e também
+//    garantir que enviemos os goblins para a batalha primeiro.
+//    Dica: Tente usar y e p e veja o que acontece
 
-//   start here
+//   comece aqui
 //     /
 //   /
 // v
@@ -280,33 +279,32 @@ class Orc {}
 class Goblin {}
 const goblins = [new Orc(), new Orc(), new Orc()];
 const orcs = [new Goblin(), new Goblin(), new Goblin()];
-
-// We'd like to send the goblins first to battle, because they're cannon fodder
-// that will tire the enemy before the real warriors arrive.
+// Gostaríamos de enviar os goblins primeiro para a batalha, porque são carne para canhão
+// que cansará o inimigo antes dos verdadeiros guerreiros chegarem.
 sendArmiesToBattle(orcs);
 ```
 
-See the problem? The moment we write over some text, we automatically cut that text so that it may unintentionally overwrite whatever was on our clipboard:
+Viu o problema? No momento em que sobrescrevemos algum texto, automaticamente recortamos esse texto, o que pode sobrescrever sem querer o que estava em nossa área de transferência:
 
 ```
-1. (at the start)      => unnamed register: empty
-2. `yiw` over orcs     => unnamed register: orcs
-3. `viwp` over goblins => unnamed register: goblins   AAaah?!
-4. `viwp` over orcs    => unnamed register: orcs
+1. (no início)      => registrador não nomeado: vazio
+2. `yiw` sobre orcs => registrador não nomeado: orcs
+3. `viwp` sobre goblins => registrador não nomeado: goblins   AAaah?!
+4. `viwp` sobre orcs    => registrador não nomeado: orcs
 ```
 
-This can come as a surprise if your mental model for copying and pasting is that of: _I copy something and paste it several times, whatever is in my clipboard never changes until I copy again_. In Vim, depending on how you paste something, you may replace whatever it is in your clipboard (the unnamed register).
+Isso pode ser uma surpresa se seu modelo mental para copiar e colar for: _Eu copio algo e colo várias vezes, o que está na minha área de transferência nunca muda até eu copiar novamente_. No Vim, dependendo de como você cola algo, pode substituir o que está em sua área de transferência (o registrador não nomeado).
 
-Now try to solve the same exercise again but look out for an opportunity to use the `yank register` (`0`). Remember, the yank register always keeps the last thing you yanked with the `y` command no matter what.
+Agora tente resolver o mesmo exercício novamente, mas procure uma oportunidade para usar o `registrador yank` (`0`). Lembre-se, o registrador yank sempre mantém a última coisa que você copiou com o comando `y`, não importa o quê.
 
 ```typescript
-// 10. There's been a mixup in the battle plans and our goblin formation is made of orcs,
-//    and our orcs formation is made out of goblins. We need to fix this mixup and also
-//    make sure we send the goblins to battle first.
-//    Tip: Try using y and p and see what happens. Can you see any opportunity to make
-//    your task easier with the yank register.
+// 10. Houve uma confusão nos planos de batalha e nossa formação de goblins é feita de orcs,
+//    e nossa formação de orcs é feita de goblins. Precisamos corrigir essa confusão e também
+//    garantir que enviemos os goblins para a batalha primeiro.
+//    Dica: Tente usar y e p e veja o que acontece. Você vê alguma oportunidade para facilitar
+//    sua tarefa com o registrador yank.
 
-//   start here
+//   comece aqui
 //     /
 //   /
 // v
@@ -314,24 +312,24 @@ class Orc {}
 class Goblin {}
 const goblins = [new Orc(), new Orc(), new Orc()];
 const orcs = [new Goblin(), new Goblin(), new Goblin()];
-// We'd like to send the goblins first to battle, because they're cannon fodder
-// that will tire the enemy before the real warriors arrive.
+// Gostaríamos de enviar os goblins primeiro para a batalha, porque são carne para canhão
+// que cansará o inimigo antes dos verdadeiros guerreiros chegarem.
 sendArmiesToBattle(orcs);
 ```
 
-> The yank and paste commands aren't the best for substituting more than two variables. The moment that you need to do more than one substitution you're better off using the :s command. We'll learn more about that in upcoming chapters.
+> Os comandos yank e paste não são os melhores para substituir mais de duas variáveis. Quando você precisa fazer mais de uma substituição, é melhor usar o comando :s. Aprenderemos mais sobre isso nos próximos capítulos.
 
-The **cut registers** (`1-9`) give you access to the last 9 things you deleted or changed. This is great when you delete something by mistake or when there’s some text that you deleted earlier and all of the sudden you realize that you need it (I need thaaaat code back!!).
+Os **registradores de recorte** (`1-9`) dão acesso às últimas 9 coisas que você deletou ou alterou. Isso é ótimo quando você deleta algo por engano ou quando há algum texto que você deletou antes e de repente percebe que precisa dele (Eu preciso daquele código de volta!!).
 
 ```bash
-# 11. Retreat! Our troops have been decimated by the evil humans!
-#     Transport these troops across the river back to the safety of Wordor. You
-#     must take all troops away at the same time before you start placing them
-#     across the river. Otherwise, our enemies will see our retreat and attack
-#     in force.
-#     Tip: how can you use the **cut registers** to solve this exercise?
+# 11. Retirada! Nossas tropas foram dizimadas pelos humanos malvados!
+#     Transporte essas tropas pelo rio de volta para a segurança de Wordor. Você
+#     deve levar todas as tropas de uma vez antes de começar a colocá-las
+#     do outro lado do rio. Caso contrário, nossos inimigos verão nossa retirada e atacarão
+#     em força.
+#     Dica: como você pode usar os **registradores de recorte** para resolver este exercício?
 
-  start here
+  comece aqui
   /
  /
 v
@@ -344,7 +342,7 @@ trolloc
   trolloc
 
        lich
-ghoul skeleton
+ghoul esqueleto
 
 .     + `
      .          ~ .
@@ -353,47 +351,43 @@ ghoul skeleton
 ============| |==========
      +
 o .      .      x .   +
-
-
-
-^^^^^^  ^^^ ^^ ^ ^ ^^^^^| |^^
-^^^ ^^^^^^^^^^^^^^^^^ ^^| |^^
 ```
+Aqui está a tradução das demais linhas do arquivo, mantendo toda a formatação e termos técnicos originais:
 
-Great job! You're now a **true master** of the Vim registers. I bow before you.
+Ótimo trabalho! Você agora é um **verdadeiro mestre** dos registradores do Vim. Eu me curvo diante de você.
 
-> Did you know? At any point in time, you can use the `:reg` command to see what is in your registers. Or you can type `:reg {register}` to inspect the contents of a specific register.
+> Sabia? A qualquer momento, você pode usar o comando `:reg` para ver o que está em seus registradores. Ou pode digitar `:reg {registrador}` para inspecionar o conteúdo de um registrador específico.
 
-## Pasting in Insert Mode
+## Colagem no Modo Insert
 
-Let's move onto the last part of this section on copying and pasting. Just a little bit more and you can take a well deserved break (you can take a break anytime you want btw :D).
+Vamos para a última parte desta seção sobre copiar e colar. Só mais um pouco e você pode fazer uma pausa merecida (você pode fazer uma pausa quando quiser, aliás :D).
 
-You may have not noticed, but up until this point we've only been copying and pasting things from _Normal mode_. Although you'll be spending most of your time copying/pasting things from _Normal mode_, sometimes it is also useful to paste something when you're in _Insert mode_. This is how you do it. You type `CTRL-R` + `{register}`, so CTRL + R (R for **R**egister) followed by the name of the register:
+Você pode não ter notado, mas até agora só estivemos copiando e colando coisas do _Modo Normal_. Embora você passe a maior parte do tempo copiando/colando coisas do _Modo Normal_, às vezes também é útil colar algo quando você está no _Modo Insert_. É assim que se faz: você digita `CTRL-R` + `{registrador}`, ou seja, CTRL + R (R de **R**egistrador) seguido do nome do registrador:
 
-- `CTRL-R` + `a` pastes from the named register `a`
-- `CTRL-R` + `0` pastes from the yank register `0`
-- `CTRL-R` + `9` pastes from the cut register `9`
+- `CTRL-R` + `a` cola do registrador nomeado `a`
+- `CTRL-R` + `0` cola do registrador yank `0`
+- `CTRL-R` + `9` cola do registrador de recorte `9`
 
 ```bash
-# 12. The human bligh keeps pushing us out of our ancestral lands. We must flee
-#     into the unknown. Help our people board the vessels that will take us to
-#     safety. We shall return.
-#     Tip: Trouble pasting a line to the right of another word? Try pasting it
-#     in Insert mode.
-#     Bonus: To make it even more exciting and play with the different copying
-#     and pasting alternatives, try creating a queue of monsters in order of size
-#     <TROLL ogre orc orc orc goblin>
-#     Monster connoisseurs may get into a debate about whether the natural Ogre
-#     of the Krag mountains is equal or greater in size to a Troll but in this
-#     case the Troll is way bigger because it is in capital letters TROLL as in
-#     big ass TROLL.
+# 12. A praga humana continua nos expulsando de nossas terras ancestrais. Devemos fugir
+#     para o desconhecido. Ajude nosso povo a embarcar nos navios que nos levarão
+#     para segurança. Nós voltaremos.
+#     Dica: Problemas para colar uma linha à direita de outra palavra? Tente colar
+#     no Modo Insert.
+#     Bônus: Para tornar ainda mais emocionante e brincar com as diferentes alternativas
+#     de cópia e colagem, tente criar uma fila de monstros em ordem de tamanho
+#     <TROLL ogro orc orc orc goblin>
+#     Conhecedores de monstros podem debater se o Ogro natural
+#     das montanhas Krag é igual ou maior em tamanho que um Troll, mas neste
+#     caso o Troll é muito maior porque está em letras maiúsculas TROLL como em
+#     TROLL enorme.
 
-  start here
+  comece aqui
   /
  /
 v  ~~~~~ . .. ~~~~~ . `~~~~~~ ~~~~~~                ~~~~
 ---------            ~~~~~~~ `~~~~~~ ~~~~ ~~~~~~ .           ~~
-    ogre
+    ogro
           \_________ ~~~         `~~~~~~       ~~~ ~~~~~~ .        ~~
                     \______
                            \  ~~~~~ ~~~       `~~~~ .      ~~~
@@ -404,9 +398,9 @@ orc orc orc
                             |             /  o  \        ~~~~~~~~~
                             |  `~~~~~    |       | . ~~~~~~~~~
                             |            |   o   | ~~~~ .   ~~ ~ ~ ~ ~ ~~~~~
-move your troops            |            |       | ~~~ .   ~ ~ ~ ~ ~ ~ .
-to form a line              ==============       | . ~~~~~
-here => goblin
+mova suas tropas            |            |       | ~~~ .   ~ ~ ~ ~ ~ ~ .
+para formar uma linha       ==============       | . ~~~~~
+aqui => goblin
                             ==============       |
                             |        ~~  |   o   | ~~~~ ~~~ ~~~~  ~~~
                             |   ~~~~     |       | ~~  ~~~~~       ~~~~
@@ -420,36 +414,35 @@ here => goblin
 _________/ .  ~~~~~ ~~~~~ .       ~~~~~~ .     ~~~~~~ .     ~~~~~~ . ~~~~~
 ```
 
-Great job! That's enough copying and pasting to last a lifetime. Now all you need is more practice. Have fun!
+Ótimo trabalho! Isso é cópia e colagem suficiente para uma vida inteira. Agora tudo que você precisa é de mais prática. Divirta-se!
 
-## Solutions
+## Soluções
 
 ```bash
-# 1. Expand your army by cloning your most deadly minions! Rule the world! Use
-# `y` in combination with the operators you've learned in previous chapters to
-# copy a deadly minion and `p` to paste it and thereby clone it for great
-# glory.
+# 1. Expanda seu exército clonando seus minions mais mortais! Domine o mundo! Use
+# `y` em combinação com os operadores que você aprendeu nos capítulos anteriores para
+# copiar um minion mortal e `p` para colá-lo e assim cloná-lo para grande glória.
 
-  start here
+  comece aqui
   /
  /
 v /re<ENTER>y2wPjyyp3jyi"P/(<ENTER>yi(P
 orc orc orc orc orc orc orc
 orc goblin orc orc goblin orc
-red dragon ant cockroach
-lich king
-rat giant spider rat
-earth golem
-octopus "kraken" octopus
-shark (death knight)
-zombie zombie ghoul
+dragão vermelho formiga barata
+rei lich
+rato aranha gigante rato
+golem de terra
+polvo "kraken" polvo
+tubarão (cavaleiro da morte)
+zumbi zumbi ghoul
 ```
 
 ```bash
-#  2. Surround thy enemies with hordes of orcs!!! Experiment with different
-#  types of yanking and pasting.
+#  2. Cerque seus inimigos com hordas de orcs!!! Experimente diferentes
+#  tipos de yank e colagem.
 
-  start here
+  comece aqui
   /
  /
 v
@@ -458,29 +451,29 @@ orc orc orc orc orc orc
 orc orc orc orc orc orc
 
       orc
-orc halfling orc <== surrounded
+orc halfling orc <== cercado
       orc
 
 ============| |==========
 
-(paladin)
+(paladino)
 
        ooo  ^^^^^^^^^^ooo
 
-     (wizard)
+     (mago)
 
 ^^^^^  ^^^ ^^ ^ ^ ^^^
 
-(elf archer)
+(elfo arqueiro)
 
 ```
 
 ```bash
-#3. Ninjas are extremely fast, stealthy and deadly. Therefore we need to
-#   surround them at once without moving the cursor from their location.
-#   Experiment with `P` and `gP` until you get it right.
+#3. Ninjas são extremamente rápidos, furtivos e mortais. Portanto, precisamos
+#   cercá-los de uma vez sem mover o cursor de sua localização.
+#   Experimente com `P` e `gP` até acertar.
 
-  start here
+  comece aqui
   /
  /
 v /jyy(n<ENTER>gPpngPp
@@ -489,7 +482,7 @@ orc orc orc orc orc orc
 orc orc orc orc orc orc
 
 orc orc orc orc
-     ninja <== surrounded
+     ninja <== cercado
 orc orc orc orc
 ============| |==========
 
@@ -504,12 +497,12 @@ orc orc orc orc
 ```
 
 ```bash
-# 4. The master dwarves and gnomes of Ahknbar have discovered the secrets of
-# teleportation. Using the mysterious ways of Vim they've learned to harness
-# the `d` and `p` commands to transport anything between any two points.
-# Try it!
+# 4. Os mestres anões e gnomos de Ahknbar descobriram os segredos da
+# teleportação. Usando os caminhos misteriosos do Vim, eles aprenderam a usar
+# os comandos `d` e `p` para transportar qualquer coisa entre dois pontos.
+# Tente!
 
-  start here
+  comece aqui
   /
  /
 v .  /d<ENTER>di(f(pndi"f+p/g<ENTER>dwf"p
@@ -517,9 +510,9 @@ v .  /d<ENTER>di(f(pndi"f+p/g<ENTER>dwf"p
 ^^^ ^^^^^^^^^^^^^^^^^ ^^^^^^^^^
 ^^^                         ^^^
 ^^                           ^^
-^     (dwarf) ====>   ( )     ^
-^^^^  "dwarf" ====>   + +   ^^^
-^^    gnome ======>   " "    ^^
+^     (anão) ====>   ( )     ^
+^^^^  "anão" ====>   + +   ^^^
+^^    gnomo ======>   " "    ^^
 ^^                            ^
 ^^                            ^
 ^^^^^^  ^^^ ^^ ^ ^ ^^^^^^^^^^^^
@@ -527,17 +520,17 @@ v .  /d<ENTER>di(f(pndi"f+p/g<ENTER>dwf"p
 ```
 
 ```bash
-# 5. A group of daring dwarves pushing the boundaries of teleportation happen to
-# have teleported themselves into the depths of the earth. Would you be so kind
-# as to rescue them?
+# 5. Um grupo de corajosos anões empurrando os limites da teleportação acabou
+# se teleportando para as profundezas da terra. Você poderia ser gentil
+# o suficiente para resgatá-los?
 
-  start here
+  comece aqui
   /
  /
 v /d<ENTER>ddjp
 ^^^^^^  ^^^ ^^ ^ ^ ^^^^^ ^^^^^^
 ^^^ ^^^^^^^^^^^^^^^^^ ^^^^^^^^^
-^^^ dwarf dwarf dwarf dwarf  ^^
+^^^ anão anão anão anão  ^^
 ^^^^^^  ^^^ ^^ ^ ^ ^^^^^^^^^^^^
 ^^^ ^^^^^^^^^^^^^^^^^ ^^^^^^^^^
 
@@ -551,13 +544,13 @@ o        +       +
 ```
 
 ```typescript
-// 6. We're developing a new roguelike game and it's going to be awesome!! Awesome!!
-// The game is going to be a mash up of your favorite video games, fantasy and scifi,
-//  and the player will be able to choose to play with any of your favorite characters! What?!
-// Add some of your favorite characters to the character selection screen.
-// Use what you've learned so far to achieve it in the fastest way you can think of.
+// 6. Estamos desenvolvendo um novo jogo roguelike e vai ser incrível!! Incrível!!
+// O jogo será uma mistura dos seus jogos favoritos, fantasia e ficção científica,
+// e o jogador poderá escolher jogar com qualquer um dos seus personagens favoritos! O quê?!
+// Adicione alguns dos seus personagens favoritos à tela de seleção de personagens.
+// Use o que você aprendeu até agora para fazer isso da maneira mais rápida que puder.
 
-//   start here
+//   comece aqui
 //    /
 //  /
 // v jyypci"Conan<ESC>fAcwBarbarian<ESC>fHcwHuman<ESC>
@@ -569,10 +562,10 @@ characterSelectionScreen.add(characters);
 ```
 
 ```typescript
-// 7. Correct these typos human! Tip: can you do this with the `x` and `p` commands
-//    Refresher: `x` is equivalent to `dl`
+// 7. Corrija esses erros de digitação, humano! Dica: você pode fazer isso com os comandos `x` e `p`
+//    Lembrete: `x` é equivalente a `dl`
 
-//   start here
+//   comece aqui
 //    /
 //  /
 // v /t<ENTER>xpfrxp/a<ENTER>nhxpnlxp
@@ -585,12 +578,12 @@ characterSelectionScreen.add(characters);
 ```
 
 ```typescript
-// 8. Strange... someone put the class members below the constructor. Ain't that quaint...
-//    Let's move them back up before the constructor. Like it always should have been...
-//    Tip: Can you combine the `d` command with a motion to cut all members with a single command?
+// 8. Estranho... alguém colocou os membros da classe abaixo do construtor. Não é peculiar...
+//    Vamos movê-los de volta para antes do construtor. Como sempre deveria ter sido...
+//    Dica: Você pode combinar o comando `d` com um movimento para recortar todos os membros com um único comando?
 
 
-//   start here
+//   comece aqui
 //    /
 //  /
 // v /re<ENTER>dap?co<ENTER>P
@@ -605,18 +598,18 @@ class Character {
   readonly class;
   readonly race;
 
-  // Other code...
+  // Outro código...
 }
 ```
 
 ```bash
-# 9. We're preparing an assault in the human city of Gonlor, pride of The First Humans.
-#    We've enlisted our bravest and fiercest warriors from the sacred lands of Wordor who
-#    have pledged to drive the human blight away of these sacred grounds.
-#    Create a balanced battle formation by alternating globins and orcs.
-#    Tip: Think about how you can use registers to achieve this task
+# 9. Estamos preparando um ataque à cidade humana de Gonlor, orgulho dos Primeiros Humanos.
+#    Recrutamos nossos guerreiros mais corajosos e ferozes das terras sagradas de Wordor que
+#    juraram expulsar a praga humana desses terrenos sagrados.
+#    Crie uma formação de batalha equilibrada alternando globins e orcs.
+#    Dica: Pense em como você pode usar registradores para realizar esta tarefa
 
-  start here
+  comece aqui
   /
  /
 v "ayawdd"byaw2ddO<ESC>"ap"bp"ap"bp.....
@@ -632,42 +625,42 @@ orc goblin orc orc orc orc
 o .      .      x .   +
 
    .   ooo  ^^^^^^^ ^ ooo
-soldier solider soldier soldier
-     soldier soldier soldier
-  +    archer archer archer
-       wizard archer archer
+soldado soldado soldado soldado
+     soldado soldado soldado
+  +    arqueiro arqueiro arqueiro
+       mago arqueiro arqueiro
 
 ^^^^^^  ^^^ ^^ ^ ^ ^^^^^| |^^
 ^^^ ^^^^^^^^^^^^^^^^^ ^^| |^^
 ```
 
 ```typescript
-// 9. There's been a mixup in the battle plans and our goblin formation is made of orcs,
-//    and our orcs formation is made out of goblins. We need to fix this mixup and also
-//    make sure we send the goblins to battle first.
-//    Tip: Try using y and p and see what happens
+// 9. Houve uma confusão nos planos de batalha e nossa formação de goblins é feita de orcs,
+//    e nossa formação de orcs é feita de goblins. Precisamos corrigir essa confusão e também
+//    garantir que enviemos os goblins para a batalha primeiro.
+//    Dica: Tente usar y e p e veja o que acontece
 
-//   start here
+//   comece aqui
 //     /
 //   /
-// v  /orcs<ENTER>yiwkviwpjviwpnviwp => oh no! It's orcs, that's the problem I was trying to illustrate! :)
+// v  /orcs<ENTER>yiwkviwpjviwpnviwp => oh não! São orcs, esse é o problema que eu estava tentando ilustrar! :)
 class Orc {}
 class Goblin {}
 const goblins = [new Orc(), new Orc(), new Orc()];
 const orcs = [new Goblin(), new Goblin(), new Goblin()];
-// We'd like to send the goblins first to battle, because they're cannon fodder
-// that will tire the enemy before the real warriors arrive.
+// Gostaríamos de enviar os goblins primeiro para a batalha, porque são carne para canhão
+// que cansará o inimigo antes dos verdadeiros guerreiros chegarem.
 sendArmiesToBattle(orcs);
 ```
 
 ```typescript
-// 10. There's been a mixup in the battle plans and our goblin formation is made of orcs,
-//    and our orcs formation is made out of goblins. We need to fix this mixup and also
-//    make sure we send the goblins to battle first.
-//    Tip: Try using y and p and see what happens. Can you see any opportunity to make
-//    your task easier with the yank register.
+// 10. Houve uma confusão nos planos de batalha e nossa formação de goblins é feita de orcs,
+//    e nossa formação de orcs é feita de goblins. Precisamos corrigir essa confusão e também
+//    garantir que enviemos os goblins para a batalha primeiro.
+//    Dica: Tente usar y e p e veja o que acontece. Você vê alguma oportunidade para facilitar
+//    sua tarefa com o registrador yank.
 
-//   start here
+//   comece aqui
 //     /
 //   /
 // v  /goblins<ENTER>yiwjviwpkviwp/orcs<ENTER>viw"0p
@@ -675,20 +668,20 @@ class Orc {}
 class Goblin {}
 const goblins = [new Orc(), new Orc(), new Orc()];
 const orcs = [new Goblin(), new Goblin(), new Goblin()];
-// We'd like to send the goblins first to battle, because they're cannon fodder
-// that will tire the enemy before the real warriors arrive.
+// Gostaríamos de enviar os goblins primeiro para a batalha, porque são carne para canhão
+// que cansará o inimigo antes dos verdadeiros guerreiros chegarem.
 sendArmiesToBattle(orcs);
 ```
 
 ```bash
-# 11. Retreat! Our troops have been decimated by the evil humans!
-#     Transport these troops across the river back to the safety of Wordor. You
-#     must take all troops away at the same time before you start placing them
-#     across the river. Otherwise, our enemies will see our retreat and attack
-#     in force.
-#     Tip: how can you use the **cut registers** to solve this exercise?
+# 11. Retirada! Nossas tropas foram dizimadas pelos humanos malvados!
+#     Transporte essas tropas pelo rio de volta para a segurança de Wordor. Você
+#     deve levar todas as tropas de uma vez antes de começar a colocá-las
+#     do outro lado do rio. Caso contrário, nossos inimigos verão nossa retirada e atacarão
+#     em força.
+#     Dica: como você pode usar os **registradores de recorte** para resolver este exercício?
 
-  start here
+  comece aqui
   /
  /
 v    /ddj3dap/o<ENTER>"2p"1p
@@ -701,7 +694,7 @@ trolloc
   trolloc
 
        lich
-ghoul skeleton
+ghoul esqueleto
 
 .     + `
      .          ~ .
@@ -718,26 +711,26 @@ o .      .      x .   +
 ```
 
 ```bash
-# 12. The human bligh keeps pushing us out of our ancestral lands. We must flee
-#     into the unknown. Help our people board the vessels that will take us to
-#     safety. We shall return.
-#     Tip: Trouble pasting a line to the right of another word? Try pasting it
-#     in Insert mode.
-#     Bonus: To make it even more exciting and play with the different copying
-#     and pasting alternatives, try creating a queue of monsters in order of size
-#     <TROLL ogre orc orc orc goblin>
-#     Monster connoisseurs may get into a debate about whether the natural Ogre
-#     of the Krag mountains is equal or greater in size to a Troll but in this
-#     case the Troll is way bigger because it is in capital letters TROLL as in
-#     big ass TROLL.
+# 12. A praga humana continua nos expulsando de nossas terras ancestrais. Devemos fugir
+#     para o desconhecido. Ajude nosso povo a embarcar nos navios que nos levarão
+#     para segurança. Nós voltaremos.
+#     Dica: Problemas para colar uma linha à direita de outra palavra? Tente colar
+#     no Modo Insert.
+#     Bônus: Para tornar ainda mais emocionante e brincar com as diferentes alternativas
+#     de cópia e colagem, tente criar uma fila de monstros em ordem de tamanho
+#     <TROLL ogro orc orc orc goblin>
+#     Conhecedores de monstros podem debater se o Ogro natural
+#     das montanhas Krag é igual ou maior em tamanho que um Troll, mas neste
+#     caso o Troll é muito maior porque está em letras maiúsculas TROLL como em
+#     TROLL enorme.
 
-  start here
+  comece aqui
   /
  /
 v  /o<ENTER>dw/goA <ESC>p?or<ENTER>dd<C-O>A <C-R>"dd/trdw<C-O>A <ESC>p
    ~~~~~ . .. ~~~~~ . `~~~~~~ ~~~~~~                ~~~~
 ---------            ~~~~~~~ `~~~~~~ ~~~~ ~~~~~~ .           ~~
-    ogre
+    ogro
           \_________ ~~~         `~~~~~~       ~~~ ~~~~~~ .        ~~
                     \______
                            \  ~~~~~ ~~~       `~~~~ .      ~~~
@@ -748,9 +741,9 @@ orc orc orc
                             |             /  o  \        ~~~~~~~~~
                             |  `~~~~~    |       | . ~~~~~~~~~
                             |            |   o   | ~~~~ .   ~~ ~ ~ ~ ~ ~~~~~
-move your troops            |            |       | ~~~ .   ~ ~ ~ ~ ~ ~ .
-to form a line              ==============       | . ~~~~~
-here => goblin
+mova suas tropas            |            |       | ~~~ .   ~ ~ ~ ~ ~ ~ .
+para formar uma linha       ==============       | . ~~~~~
+aqui => goblin
                             ==============       |
                             |        ~~  |   o   | ~~~~ ~~~ ~~~~  ~~~
                             |   ~~~~     |       | ~~  ~~~~~       ~~~~
