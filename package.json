@@ -1,10 +1,10 @@
 {
-	"name": "learn-vim",
+	"name": "learn-vim-pt-br",
 	"icon": "media/icon.png",
-	"displayName": "Learn Vim",
-	"description": "Learn Vim right within your favorite editor",
+	"displayName": "Learn Vim PT-BR",
+	"description": "Aprenda Vim diretamente no seu editor favorito",
 	"version": "0.0.28",
-	"publisher": "vintharas",
+	"publisher": "7acini",
 	"keywords": [
 		"vim",
 		"vi",
@@ -44,7 +44,7 @@
 			"activitybar": [
 				{
 					"id": "learn-vim-container",
-					"title": "Learn Vim",
+					"title": "Learn Vim PT-BR",
 					"icon": "media/code.svg"
 				}
 			]
@@ -52,8 +52,8 @@
 		"views": {
 			"learn-vim-container": [
 				{
-					"id": "learn-vim",
-					"name": "Learn Vim"
+					"id": "learn-vim-pt-br",
+					"name": "Learn Vim PT-BR"
 				}
 			]
 		}
